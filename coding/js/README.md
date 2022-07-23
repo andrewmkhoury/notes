@@ -101,3 +101,9 @@ Because of rounding error, the difference between the
 Excerpt From
 JavaScript: The Definitive Guide
 David Flanagan
+
+## null vs. undefined
+typeof null === "object"
+typeof undefined === "undefined"
+Both evaluate to false if used as a in the context of a boolean condition in an if, while, etc statement.
+https://jsfiddle.net/d9L2vro6/2/
