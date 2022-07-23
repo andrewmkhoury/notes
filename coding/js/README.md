@@ -106,4 +106,4 @@ David Flanagan
 typeof null === "object"
 typeof undefined === "undefined"
 Both evaluate to false if used as a in the context of a boolean condition in an if, while, etc statement.
-https://jsfiddle.net/d9L2vro6/2/
+https://jsfiddle.net/d9L2vro6/3/
