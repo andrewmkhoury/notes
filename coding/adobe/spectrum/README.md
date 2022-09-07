@@ -22,3 +22,12 @@ React Spectrum splits each component into three parts:
 * rendered component - provides the theme and design system specific logic, and renders the actual platform
     elements (including styles - CSS in classes, CSS-in-JS).
 
+### Implementation
+* Split into 3 npm scopes - @react-spectrum, @react-aria, @react-stately
+* Individually versioned packages for each component.  i.e. use only what you need.
+* Each component is highly composable - features are split into multiple hooks.  Combine them to achieve what you need.
+
+3 Scopes:
+* React Stately - implements state management and core logic for each component. 
+* React Aria - implements behavior and accessibility for the web according to WAI-ARIA Authoring Practices. Full screen reader and keyboard navigation support, along with mouse and touch interactions.
+* React Spectrum - puts all of these pieces together and implements the Adobe-specific styling.  Supports theming, dark mode and responsive scaling.
