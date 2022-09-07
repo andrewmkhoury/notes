@@ -7,7 +7,8 @@ There are a few different types of components but `React.Component` is most comm
 * A component takes in parameters, called props (short for “properties”), and returns a hierarchy of views to display via the render method.
 * Markup and JS are in the same file loosely coupled in components.
 * The syntax below where the `<div ...>` is directly in the JavaScript is called "jsx".  For the internals of how react JSX plugin for babel compiler/transformer library works, see [here](https://babeljs.io/docs/en/babel-plugin-transform-react-jsx)
-For example:
+
+Example React + JSX code:
 ```javascript
 class ShoppingList extends React.Component {
   render() {
