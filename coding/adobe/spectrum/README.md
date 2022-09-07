@@ -1,6 +1,7 @@
 # Adobe Spectrum Library
 https://react-spectrum.adobe.com
 
+## Architecture
 Spectrum relies on react hooks https://reactjs.org/docs/hooks-intro.html
 
 ```
