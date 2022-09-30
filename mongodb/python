@@ -1,313 +1,81 @@
-### Python and MongoDB
+ 
 
-### **Python Programming Language**
+### JSON Syntax Review
 
-First of all, if you don't know Python programming language then go here first:\
-<http://docs.python.org/2/tutorial/>
+**JSON**  
 
-In particular, when working with MongoDB you will find the information on Python lists and dictionaries very useful:
+* stands for **J**ava**S**cript **O**bject **N**otation
+* is a text-data interchange format
+* is similar to xml, but more compact and easier to read
 
--   Lists - <http://docs.python.org/2/tutorial/introduction.html#lists>
--   Dictionaries - <http://docs.python.org/2/tutorial/datastructures.html#dictionaries>
+**JSON Parser:**  
+A JSON parser is a program or module of a program that reads JSON format text for use in software such as MongoDB.  A JSON parser can be written in any programming language.  A list of available parsers are listed on [http://www.json.org/](http://www.json.org/).  
+  
+**A JSON Document consists of the following structures:**  
 
-### Basic Python Reference:\
-This reference can be used as a refresher if you forget some of the basic features and facts regarding python.
+* **Values:** A value can be any of the following:
 
-#### Working with Numbers:
+* **String:** text surrounded by double quotes.    Note: single quotes are usually allowed by parsers (such as MongoDB's parser), but is not actually part of the valid JSON format specification.  For example these are all json string values:
 
-Number Representations:
+* **"**a string value"
+* "another-value"
+* "value"
 
--   Integers:
+* **Number:** Numbers for example:
 
--   The range is -2,147,483,648 to 2,147,483,647 (approximately ±2 billion)
+* 10
+* 1.0
+* -12
+* -12.05
+* 1.5e2
+* 1.5e+2
+* 1.5e-2
+* 1.5E2
+* 1.5E+2
+* 1.5E-2
 
--   Long Integers:
+* **true** or **false**: The boolean values of _true_ or _false_.
+* **null**: Null basically denotes a non-value.
+* **Object:** See below for definition.
+* **Array:**  See below for definition.
 
--   Integral numbers exceeding the integer type range can be used by appending L to the end of the number (e.g. 4294967296L)
+* **Name/Value pairs or Properties:**
 
--   Radix:
+* A name/value pair consists of a _string_, a colon ':' then a _value_ (see above for definition of string and value).  For example:
 
--   Hexadecimal: Numbers starting with **0x **are hexadecimal (e.g. 0x5A)
--   Octal: Numbers starting with a leading **0** are octal (e.g. 0512)
+* "name" : "value"
+* "count" : 5
+* "isTrueOrFalse" : false
 
--   Floating point number representations:
+* **Objects:**
 
--   .625
--   0.625
--   6.25E-2
--   625E-4
+* An object is a collection of _name/value pairs_ surrounded by curly braces { }.  The name/value pairs in the object are separated by commas.  For example:
 
-Operators:
+* {"name" : "value"}
+* {"name" : "value", "num" : 5 }
 
--   + addition (e.g. 1+1=2)
--   - subtraction (e.g. 2-1=1) and unary negation (e.g. -1+2=1)
--   * multiplication (e.g. 2*2=4)
--   / division (e.g. 2/2=1)
+* **Arrays:**
 
--   Care must be taken with integers vs floating point numbers.  For example 685/252=2 however 685./252.=2.7182539682539684.
+* A list, is a collection of _objects_ and/or _values_ surrounded by brackets \[ \].  Items in the list are separated by commas.  For example:
 
--   ** exponent (e.g. 2**32 is 2 to the power of 32)
--   = variable assignment (e.g. a = 2+2 would set the value of variable 'a' equal to 4)
--   Note: There are no increment operators, (e.g. i++ or ++i), instead you must use i = i+1
+* \[5\]
+* \[{"name", "value"}\]
+* \[{"name": "value"}, { "number": 10}, "string value", 20\]
 
-Comparison Operators:
+See [here for the official specification](http://json.org/).  
+  
+**JSON Sample Documents:**  
+See [here for sample JSON documents](http://json.org/example.html).  
+  
+**Editing JSON:**  
+[JSONLint](http://jsonlint.com/) is a great tool for validating your JSON documents: [http://jsonlint.com/](http://jsonlint.com/)  
+**MongoDB and JSON:**  
+MongoDB shell uses an extended JSON format.  See here for some details on this topic: [http://www.mongodb.org/display/DOCS/Mongo+Extended+JSON](http://www.mongodb.org/display/DOCS/Mongo+Extended+JSON)  
+  
+Internally MongoDB stores data in BSON format or Binary JSON.  See here for specification details: [http://bsonspec.org/](http://bsonspec.org/)
 
--   < less than
--   ≤ less than or equal to
--   > greater than
--   ≥ greater than or equal to
--   == equal to
--   != not equal to
+Posted by [Andrew](https://www.blogger.com/profile/16901614970730543854 "author profile") at  [1:19 PM](https://mongodbblog.blogspot.com/2012/12/json-syntax-review.html "permanent link") [![](https://resources.blogblog.com/img/icon18_edit_allbkg.gif)](https://www.blogger.com/post-edit.g?blogID=7477022229347268502&postID=3651867151701382909&from=pencil "Edit Post")
 
-Built-in Functions:
+[Email This](https://www.blogger.com/share-post.g?blogID=7477022229347268502&postID=3651867151701382909&target=email "Email This")[BlogThis!](https://www.blogger.com/share-post.g?blogID=7477022229347268502&postID=3651867151701382909&target=blog "BlogThis!")[Share to Twitter](https://www.blogger.com/share-post.g?blogID=7477022229347268502&postID=3651867151701382909&target=twitter "Share to Twitter")[Share to Facebook](https://www.blogger.com/share-post.g?blogID=7477022229347268502&postID=3651867151701382909&target=facebook "Share to Facebook")[Share to Pinterest](https://www.blogger.com/share-post.g?blogID=7477022229347268502&postID=3651867151701382909&target=pinterest "Share to Pinterest")
 
--   [complex(real,imag) complex numbers](http://docs.python.org/2/library/functions.html#complex)
--   [abs(number) absolute value](http://docs.python.org/2/library/functions.html#abs)
--   [round(number, ndigits) rounding](http://docs.python.org/2/library/functions.html#round)
--   [bin(number) convert to binary](http://docs.python.org/2/library/functions.html#bin)
--   [float(number) convert number to floating point](http://docs.python.org/2/library/functions.html#float)
--   See the full reference of built-in functions [here](http://docs.python.org/2/library/functions.html)
-
-Floating point:
-
--   When using the division operator, care must be taken to allow for floating point results.
-
--   For example 685/252=2 however 685./252.=2.7182539682539684
--   Use built-in function float(number) to convert integer variables to floating point.
-
--   See [here](http://docs.python.org/2/tutorial/floatingpoint.html) for floating point issues and limitations.
-
-#### Working with Strings: 
-
-A String is a data type in python which is a series of characters wrapped with quotes.\
-String Representation:
-
--   Strings are enclosed in either single or double quotes (e.g. "a string!" or 'a string!')
--   If you want to put a quote in a string you must escape it with a backslash '\' (e.g. "I'm a \"string\"" or 'I\'m a "string"')
--   A single string can span multiple lines by using a trailing backslash '\' at the end of each line or by starting and ending the string with a triple quote """.
-
--   e.g.\
-       "This is a \\
-     multi-line string"
-
-     """This is a\
-     multi-line string"""
--   Note that the backslash method doesn't preserve the new lines in the string, but the triple quote method does. 
-
--   Unicode strings can be represented by prefixing with a 'u' before the first quote (e.g. u"This is a unicode string")
--   A Unicode character can be represented within a string by prefixing the character with '\u' (e.g. u"This\u0020is a unicode string")
-
-String Concatenation:
-
--   Two string literals next to each other are automatically concatenated. print 'str' 'ing' outputs 'string'
-
--   Warning, this only applies to string literals.
-
--   Two strings of any kind (string literal, variable value, or result of function call) can be concatenated using + operator. 
-
--   Example 1:\
-    a = "foo"\
-    b = "bar"\
-    print a + b\
-    **\
-    **Output:\
-    foobar
--   Example 2:\
-    print "foo".strip() + "bar"
-
-    Output:\
-    foobar
-
-Substrings:
-
-A substring is a subsection of a string.  For example, here are some substrings of "Hello" - "H", "ll", "o", "ello", "Hel"
-
--   For sub-strings we can access them with an index like this string[i] or a range like this string[i:j] (with the index of the first character being 0)\
-    For example:\
-    >>> word = 'Help' + 'A'\
-    >>> word[4]\
-    'A'\
-    >>> word[0:2]\
-    'He'\
-    >>> word[2:4]\
-    'lp'\
-    >>> word[:2]    # The 1st 2 characters\
-    'He'\
-    >>> word[2:]    # All except the 1st 2 characters\
-    'lpA'\
-    >>> word[2:100] # handled gracefully\
-    'lpA'\
-    >>> word[-2]\
-    'p'\
-    >>> word[100]   # results in error\
-    Traceback (most recent call last):\
-      File "<stdin>", line 1, in <module>\
-    IndexError: string index out of range
-
--   Note that the string is immutable when accessed by index.  (i.e. you cannot do the following word[4]='B')
-
- String Functions:
-
--   [len(string) returns an integer number of the number of characters in the string.](http://docs.python.org/2/library/functions.html#len)
--   [unicode function converts strings to unicode.](http://docs.python.org/2/library/functions.html#unicode)
--   [str(object) convert an object to a string representation of the object.](http://docs.python.org/2/library/functions.html#str)
--   See the full reference of built-in functions [here](http://docs.python.org/2/library/functions.html).
-
-See [here](http://docs.python.org/2/tutorial/introduction.html#strings) for the official python tutorial on the topic of strings.
-
-#### Working with Lists:
-
-A list is a data type in python which is a comma separated list of values or "items" surrounded by square brackets.  For example ["a", 5.0, "a string", 10, ["a", "b", "c"]]\
-Facts about lists:
-
--   Items in the same list can be of different types.  ( e.g. ['a', 5, 'b', 2.0] )
--   Order matters
-
--   Lists can be accessed by index ( e.g. mylist[0] or mylist[2] )
-
--   The index of the first item in the list is 0
-
--   Lists can also be accessed by range ( e.g. mylist[0:2] or mylist[1:3] )
-
--   The len(object) function works to get you the number of items (or [cardinality](http://en.wikipedia.org/wiki/Cardinality)) of the list. 
--   Lists can be nested ["a", ["b", "c"]]
--   Lists are mutable, meaning you can modify them when accessing them by index or range.
-
--   For example:\
-    >>> mylist = ["a", "b", "c", "d"]\
-    >>> mylist[0:2] = []\
-    >>> mylist\
-    ['c', 'd']\
-    >>> mylist[0:0] = ["a", "b"]\
-    >>> mylist\
-    ['a', 'b', 'c', 'd']
-
-Built-in list functions:
-
--   list.append(x) appends item x to end of list
--   list.insert(i,x) inserts item x at index i
--   list.index(x) gets index of item x within the list
--   list.count(x) gets number of times x appears in the list
--   list.sort() sort items of the list
--   list.reverse() reverse ordering of the items in the list
--   list.pop() gets and removes the last item in the list
--   list.pop(i) gets and removes the item at index i
--   list.remove(x) removes first item in list matching item x
--   list.extend(L) adds all items in list L to then end of list
-
-#### Working with Tuples
-
-A tuple consists of any number of values separated by a commas.
-
-Facts about tuples:
-
--   They are immutable, unlike lists, you cannot access and modify part of a tuple.
-
--   For example, this will throw an error:\
-    mytuple = "a", "b", "c"\
-    mytuple[0] = "a1"
-
--   However, they can contain mutable objects such as lists.
--   In output, tuples always are surrounded by parentheses and can be input with or without parentheses.
-
--   For example, these are equivalent:\
-    mytuple = "a", "b", "c"\
-    mytuple = ("a", "b", "c")
-
--   An empty tuple is created by using empty parentheses, e.g. mytuple = ()
--   A tuple with single item must have a trailing comma, e.g. mytuple = "a",
-
-####  Control Flow:
-
--   If-Else statement: If-Else statements create logical branches allowing us to check if a condition is true or false and take action based on it.
-
--   For example:\
-    if x > 2:\
-        print "x is greater than 2"\
-    elif x < 2:\
-        print "x is less than 2"\
-    else:\
-        print "x is equal to 2!"
-
--   For loop:Loops over the items in a sequence, list, dictionary or string and allows us to execute a sequence of actions upon the items.
-
--   Examples:
-
--   words = ["cat", "bird", "dog"]\
-    for w in words:\
-        print w
-
--   For loop using a range
-
--   Examples:
-
--   words = ["cat", "bird", "dog"]\
-    for i in range(3):\
-        print i, words[i]
-
--   While Loop: Repeats a sequence of actions until some condition is met.
-
--   x = 1\
-    while x < 5:\
-        print x\
-        x = x + 1
-
--   Function definition: Allows you to define a piece of code that can be reused by calling a it by name and optionally passing values/variables into it (these are called function arguments).
-
--   For example:\
-    >>> def fib(n):    # write Fibonacci series up to n\
-    ...     """Print a Fibonacci series up to n."""\
-    ...     a, b = 0, 1\
-    ...     while a < n:\
-    ...         print a,\
-    ...         a, b = b, a+b\
-    ...\
-    >>> # Now call the function we just defined:\
-    ... fib(2000)\
-    0 1 1 2 3 5 8 13 21 34 55 89 144 233 377 610 987 1597
-
--   See [here](http://docs.python.org/2/tutorial/controlflow.html) for details on the rest of the control flow constructs in python.
-
-#### Statements
-
--   [del statement can delete variables or delete items from a list.](http://docs.python.org/2/reference/simple_stmts.html#del)
-
--   For example:\
-    del list[0] #removes the first item in the list\
-    del list[0:2] #removes the first two items in the list\
-    del list
-
--   [pass statement does nothing, it is used as a placeholder where you want to take no action.](http://docs.python.org/2/reference/simple_stmts.html#pass) 
-
--   For example:\
-    def f(arg): pass    # a function that does nothing (yet)\
-    class C: pass       # a class with no methods (yet)
-
--   [exec statement will execute python code dynamically contained within a string.](http://docs.python.org/2/reference/simple_stmts.html#exec)
--   See [here](http://docs.python.org/2/reference/simple_stmts.html) for a full reference of simple python statements.
-
-#### Python Coding Style
-
-The preferred coding style / format for Python is called Intermezzo.  Here are some main points regarding the style.
-
-Use:
-
--   4 spaces for indentations instead of tabs
--   Lines that are wrapped if they exceed 79 characters
--   Blank lines between functions and classes
--   Comments on their own line
--   Docstrings
--   Spaces before and after operators (e.g. a + (b - c) )
--   Spaces after commas (e.g. f(a, b - c) )
--   Camel casing for class names (e.g. MyClassName)
--   Lower case with underscores for function names (e.g. my_function_name)
--   ASCII encoding for code files except when author name requires Latin-1
-
-**Accessing MongoDB using Python**
-----------------------------------
-
-The preferred and recommended way of using MongoDB from the python programming language is by using the PyMongo api.  Installation instructions can be found here: <http://api.mongodb.org/python/current/installation.html>\
-**\
-****Using PyMongo**\
-Once PyMongo is installed then go here and follow the PyMongo tutorial:\
-<http://api.mongodb.org/python/current/tutorial.html>
+Labels: [json](https://mongodbblog.blogspot.com/search/label/json), [mongodb](https://mongodbblog.blogspot.com/search/label/mongodb)
