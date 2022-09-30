@@ -1,5 +1,34 @@
 # MongoDB
- 
+  
+
+### Downloading and Installing MongoDB (for Development)
+
+**Mac OSX Install procedure:**  
+
+1.  Go to the downloads page [http://www.mongodb.org/downloads](http://www.mongodb.org/downloads)
+2.  Download the latest "Production Release" version for Mac OSX to a directory where you would like to install MongoDB
+3.  Open Terminal on the Mac (Applications => Utilities => Terminal) 
+4.  Change directories to where you have downloaded MongoDB, for example:  
+    cd /Users/andrew/apps/mongodb/
+5.  Run this command to unzip the MongoDB installation:  
+    tar -xzvf mongodb-osx-x86_64-2.2.1.tgz
+6.  Run this command to create the db directory for MongoDB (for development purposes we just make the directory world writeable):  
+    sudo /data/db  
+    sudo chmod 777 /data/db
+7.  Run this commands to change directories to the bin folder and start MongoDB server:  
+    cd mongodb-osx-x86_64-2.2.1/bin  
+    sudo ./mongod
+8.  Now your server is set up, now to use MongoDB, in another Terminal tab, cd to the bin directory again and run this command to connect to MongoDB:  
+    ./mongo
+
+**See here for a video from 10gen showing this process:**  
+  
+
+Posted by [Andrew](https://www.blogger.com/profile/16901614970730543854 "author profile") at  [10:52 AM](https://mongodbblog.blogspot.com/2012/12/downloading-and-installing-mongodb-for.html "permanent link") [![](https://resources.blogblog.com/img/icon18_edit_allbkg.gif)](https://www.blogger.com/post-edit.g?blogID=7477022229347268502&postID=7896473612566236556&from=pencil "Edit Post")
+
+[Email This](https://www.blogger.com/share-post.g?blogID=7477022229347268502&postID=7896473612566236556&target=email "Email This")[BlogThis!](https://www.blogger.com/share-post.g?blogID=7477022229347268502&postID=7896473612566236556&target=blog "BlogThis!")[Share to Twitter](https://www.blogger.com/share-post.g?blogID=7477022229347268502&postID=7896473612566236556&target=twitter "Share to Twitter")[Share to Facebook](https://www.blogger.com/share-post.g?blogID=7477022229347268502&postID=7896473612566236556&target=facebook "Share to Facebook")[Share to Pinterest](https://www.blogger.com/share-post.g?blogID=7477022229347268502&postID=7896473612566236556&target=pinterest "Share to Pinterest")
+
+Labels: [mongodb](https://mongodbblog.blogspot.com/search/label/mongodb)
 
 ### Edit records using MongoDB shell
 
