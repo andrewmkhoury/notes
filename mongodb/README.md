@@ -21,7 +21,6 @@
 8.  Now your server is set up, now to use MongoDB, in another Terminal tab, cd to the bin directory again and run this command to connect to MongoDB:  
     ./mongo
 
-**See here for a video from 10gen showing this process:**  
   
 
 ### Edit records using MongoDB shell
