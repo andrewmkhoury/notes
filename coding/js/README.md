@@ -91,19 +91,33 @@ x == .1             // => false: .3-.2 is not equal to .1
 y == .1             // => true: .2-.1 is equal to .1
 ```
 
-Because of rounding error, the difference between the
+> Because of rounding error, the difference between the
           approximations of .3 and .2 is not exactly the same as the
           difference between the approximations of .2 and .1. It is important
           to understand that this problem is not specific to JavaScript: it
           affects any programming language that uses binary floating-point
           numbers”
 
-Excerpt From
+> -- Excerpt From
 JavaScript: The Definitive Guide
 David Flanagan
 
 ## null vs. undefined
+```
 typeof null === "object"
 typeof undefined === "undefined"
+```
 Both evaluate to false if used as a in the context of a boolean condition in an if, while, etc statement.
 https://jsfiddle.net/d9L2vro6/3/
+
+## Nullish coalescing operator
+```
+const foo = null ?? 'default string';
+console.log(foo);
+// expected output: "default string"
+
+const baz = 0 ?? 42;
+console.log(baz);
+// expected output: 0
+```
+https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Nullish_coalescing_operator
