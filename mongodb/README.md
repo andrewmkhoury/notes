@@ -24,12 +24,6 @@
 **See here for a video from 10gen showing this process:**  
   
 
-Posted by [Andrew](https://www.blogger.com/profile/16901614970730543854 "author profile") at  [10:52 AM](https://mongodbblog.blogspot.com/2012/12/downloading-and-installing-mongodb-for.html "permanent link") [![](https://resources.blogblog.com/img/icon18_edit_allbkg.gif)](https://www.blogger.com/post-edit.g?blogID=7477022229347268502&postID=7896473612566236556&from=pencil "Edit Post")
-
-[Email This](https://www.blogger.com/share-post.g?blogID=7477022229347268502&postID=7896473612566236556&target=email "Email This")[BlogThis!](https://www.blogger.com/share-post.g?blogID=7477022229347268502&postID=7896473612566236556&target=blog "BlogThis!")[Share to Twitter](https://www.blogger.com/share-post.g?blogID=7477022229347268502&postID=7896473612566236556&target=twitter "Share to Twitter")[Share to Facebook](https://www.blogger.com/share-post.g?blogID=7477022229347268502&postID=7896473612566236556&target=facebook "Share to Facebook")[Share to Pinterest](https://www.blogger.com/share-post.g?blogID=7477022229347268502&postID=7896473612566236556&target=pinterest "Share to Pinterest")
-
-Labels: [mongodb](https://mongodbblog.blogspot.com/search/label/mongodb)
-
 ### Edit records using MongoDB shell
 
 _(Assuming your MongoDB server is already running...)_  
@@ -75,9 +69,3 @@ _(Assuming your MongoDB server is already running...)_
 7.  Now we will remove the document (after this we run db.foo.find() then we see that there are now no records in the foo collection):  
     \> db.foo.remove(bob)  
     \> db.foo.find()
-
-Posted by [Andrew](https://www.blogger.com/profile/16901614970730543854 "author profile") at  [12:15 PM](https://mongodbblog.blogspot.com/2012/12/add-find-update-and-remove-records-in.html "permanent link") [![](https://resources.blogblog.com/img/icon18_edit_allbkg.gif)](https://www.blogger.com/post-edit.g?blogID=7477022229347268502&postID=3234666125798618326&from=pencil "Edit Post")
-
-[Email This](https://www.blogger.com/share-post.g?blogID=7477022229347268502&postID=3234666125798618326&target=email "Email This")[BlogThis!](https://www.blogger.com/share-post.g?blogID=7477022229347268502&postID=3234666125798618326&target=blog "BlogThis!")[Share to Twitter](https://www.blogger.com/share-post.g?blogID=7477022229347268502&postID=3234666125798618326&target=twitter "Share to Twitter")[Share to Facebook](https://www.blogger.com/share-post.g?blogID=7477022229347268502&postID=3234666125798618326&target=facebook "Share to Facebook")[Share to Pinterest](https://www.blogger.com/share-post.g?blogID=7477022229347268502&postID=3234666125798618326&target=pinterest "Share to Pinterest")
-
-Labels: [mongo shell](https://mongodbblog.blogspot.com/search/label/mongo%20shell), [mongodb](https://mongodbblog.blogspot.com/search/label/mongodb)
