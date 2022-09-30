@@ -73,9 +73,3 @@ See [here for sample JSON documents](http://json.org/example.html).
 MongoDB shell uses an extended JSON format.  See here for some details on this topic: [http://www.mongodb.org/display/DOCS/Mongo+Extended+JSON](http://www.mongodb.org/display/DOCS/Mongo+Extended+JSON)  
   
 Internally MongoDB stores data in BSON format or Binary JSON.  See here for specification details: [http://bsonspec.org/](http://bsonspec.org/)
-
-Posted by [Andrew](https://www.blogger.com/profile/16901614970730543854 "author profile") at  [1:19 PM](https://mongodbblog.blogspot.com/2012/12/json-syntax-review.html "permanent link") [![](https://resources.blogblog.com/img/icon18_edit_allbkg.gif)](https://www.blogger.com/post-edit.g?blogID=7477022229347268502&postID=3651867151701382909&from=pencil "Edit Post")
-
-[Email This](https://www.blogger.com/share-post.g?blogID=7477022229347268502&postID=3651867151701382909&target=email "Email This")[BlogThis!](https://www.blogger.com/share-post.g?blogID=7477022229347268502&postID=3651867151701382909&target=blog "BlogThis!")[Share to Twitter](https://www.blogger.com/share-post.g?blogID=7477022229347268502&postID=3651867151701382909&target=twitter "Share to Twitter")[Share to Facebook](https://www.blogger.com/share-post.g?blogID=7477022229347268502&postID=3651867151701382909&target=facebook "Share to Facebook")[Share to Pinterest](https://www.blogger.com/share-post.g?blogID=7477022229347268502&postID=3651867151701382909&target=pinterest "Share to Pinterest")
-
-Labels: [json](https://mongodbblog.blogspot.com/search/label/json), [mongodb](https://mongodbblog.blogspot.com/search/label/mongodb)
