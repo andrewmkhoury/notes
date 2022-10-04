@@ -13,33 +13,33 @@ A JSON parser is a program or module of a program that reads JSON format text fo
   
 **A JSON Document consists of the following structures:**  
 
-* **Values:** A value can be any of the following:
+**Values:** A value can be any of the following:
 
-* **String:** text surrounded by double quotes.    Note: single quotes are usually allowed by parsers (such as MongoDB's parser), but is not actually part of the valid JSON format specification.  For example these are all json string values:
+**String:** text surrounded by double quotes.    Note: single quotes are usually allowed by parsers (such as MongoDB's parser), but is not actually part of the valid JSON format specification.  For example these are all json string values:
 
-* **"**a string value"
-* "another-value"
-* "value"
+  * **"**a string value"
+  * "another-value"
+  * "value"
 
-* **Number:** Numbers for example:
+**Number:** Numbers for example:
 
-* 10
-* 1.0
-* -12
-* -12.05
-* 1.5e2
-* 1.5e+2
-* 1.5e-2
-* 1.5E2
-* 1.5E+2
-* 1.5E-2
+  * 10
+  * 1.0
+  * -12
+  * -12.05
+  * 1.5e2
+  * 1.5e+2
+  * 1.5e-2
+  * 1.5E2
+  * 1.5E+2
+  * 1.5E-2
 
-* **true** or **false**: The boolean values of _true_ or _false_.
-* **null**: Null basically denotes a non-value.
-* **Object:** See below for definition.
-* **Array:**  See below for definition.
+**true** or **false**: The boolean values of _true_ or _false_.
+**null**: Null basically denotes a non-value.
+**Object:** See below for definition.
+**Array:**  See below for definition.
 
-* **Name/Value pairs or Properties:**
+**Name/Value pairs or Properties:**
 
 * A name/value pair consists of a _string_, a colon ':' then a _value_ (see above for definition of string and value).  For example:
 
@@ -47,20 +47,20 @@ A JSON parser is a program or module of a program that reads JSON format text fo
 * "count" : 5
 * "isTrueOrFalse" : false
 
-* **Objects:**
+**Objects:**
 
 * An object is a collection of _name/value pairs_ surrounded by curly braces { }.  The name/value pairs in the object are separated by commas.  For example:
 
 * {"name" : "value"}
 * {"name" : "value", "num" : 5 }
 
-* **Arrays:**
+**Arrays:**
 
 * A list, is a collection of _objects_ and/or _values_ surrounded by brackets \[ \].  Items in the list are separated by commas.  For example:
 
-* \[5\]
-* \[{"name", "value"}\]
-* \[{"name": "value"}, { "number": 10}, "string value", 20\]
+  * \[5\]
+  * \[{"name", "value"}\]
+  * \[{"name": "value"}, { "number": 10}, "string value", 20\]
 
 See [here for the official specification](http://json.org/).  
   
