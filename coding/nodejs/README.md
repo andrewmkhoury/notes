@@ -50,6 +50,16 @@ https://nodejs.org/en/download/package-manager/
 
 https://github.com/nvm-sh/nvm
 
+### Using nvm
+* Install latest version of node
+```
+nvm install --lts
+```
+* Install older version of node
+```
+nvm install v12.14.1
+```
+
 ## Reading Environment Variables
 The process core module of Node.js provides the env property which hosts all the environment variables that were set at the moment the process was started.
 e.g.
