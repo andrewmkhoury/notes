@@ -88,3 +88,58 @@ Provisioning
   * Analyze individual traces for performance, capacity and failure
   * Jaeger, Zipkin and New Relic do tracing
   
+### Introduction to SLx
+* SL = Service Level, x = different factors that can impact your work as SRE
+* SLI = Service Level Indicator - Aspect of service being measured - e.g. latency
+* SLO = Service Level Objective - Target value for SLI - e.g. 99% of requests < 100ms
+* SLA = Service Level Agreement - If SLO is not met - e.g. 10% service credit for latency < 98.5%
+
+#### SLI
+Aspect of service being measured *that affects customer service*
+* What do the users care about?
+  * User-Facing - Availability, Latency, Throughput
+  * Storage - Latency, Availability, Durability
+  * Big Data - Throughput, End-to-end latency
+
+*Collecting Indicators*
+Server-side:
+* Gather metrics - e.g. Prometheus
+* Analyze logs - e.g. HTTP 500 statuses / total responses
+
+Client-side:
+* Page load time
+
+Aggregation of the data
+* Averages aren't usually helpful
+* Use [percentiles](https://en.wikipedia.org/wiki/Percentile) to see outliers
+* Use known good test input data
+
+SLOs/SLTs - Service Level Objectives or Service Level Targets
+*What makes an SLO useful?*
+* User cares about it
+* Don't define an SLO for every SLI
+
+SLO Expectations
+* Keep a safety margin
+* Don't overachieve
+* Understand if you need to make the system faster, more available or more resilient
+
+### SLA
+Crafting SLA involves business and legal teams.  Be conservative in what is advertised to users.
+
+Error Budget
+* Balance stability of your product with deployment speed
+* SLOs should never be 100% - 99.9% is more acceptable = 43 mins / month.
+
+Error Budget Motivation
+* Software fault tolerance
+* Testing
+* Push frequency
+* Canary Duration / Size
+
+Forming Error Budget
+* Uptime is measured by monitoring system
+* If you haven't hit your error budget then you can push a release
+* Throttle based on budget
+
+
