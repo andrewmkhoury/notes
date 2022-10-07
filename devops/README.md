@@ -175,3 +175,45 @@ Reducing Toil
 * Reject - Costs of doing/not doing, delay to do in batches, use SLO/error budget.
 * Relay - Promote toil reduction as feature, provide self-service.
 * Remove - Eliminate source of toil, automate response.
+
+## Infrastructure as Code
+### Automation Tools
+Config Management
+* Manage software and configs on machines
+* e.g. Ansible, puppet, chef, smutje
+
+Server Templating
+* Create VMs or Containers
+* e.g. Packer, Docker
+
+Orchestration
+* Manage fleet of VMs or Containers
+* e.g. ECS, Kubernetes
+
+Provisioning
+* Create foundational infrastructure
+* Terraform, CloudFormation, ARM
+
+### IaC Benefits
+
+Source Code Management
+* Archive - keep track of source code
+* Audit Log - what changed and when
+* Review of Changes - pull requests - this helps w/ finding bugs / knowledge sharing
+* e.g. Git / Github
+
+CI/CD
+Pull-Requests for code review
+* 4 eye principle
+* Automation to validate changes and change requests
+
+Automatic Deployment
+* CMR integration
+* Deployment messages via chat, email, etc.
+
+Automation in General
+* Consistent
+* Faster
+* Repeatable
+* Self-Service
+
