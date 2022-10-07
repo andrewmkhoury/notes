@@ -61,3 +61,30 @@ Change Management
 Provisioning
 * Provisioning = Change management + Capacity Planning
 * Provisioning must be fast and only when necessary
+
+
+### Observability
+* 3 Pillars
+  * Metrics - Key-value pair metrics for alerts and dashboards
+  * Logs - Gather logs in central location for analysis
+  * Traces - Tracking transactions between components
+  
+* Metrics and Monitoring
+  * Time series data
+  * Automated processing of metrics
+  * Build visual dashboards
+  * Prometheus and New Relic are metrics platforms
+  
+* Logging
+  * Create code that logs properly
+  * After fact analysis
+  * Build dashboards, queries, reports
+  * Splunk, Elastic Search, & SumoLogic are tools
+
+* Distributed Tracing
+  * Tracing microservice / distributed architecture
+  * Install agents
+  * Gather results to central location
+  * Analyze individual traces for performance, capacity and failure
+  * Jaeger, Zipkin and New Relic do tracing
+  
