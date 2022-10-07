@@ -169,7 +169,7 @@ Manual, repetitive and automatable tasks are toil.
 Measuring Toil
 1. Identify - processes, prod interruptions, migrations, troubleshooting, capacity planning
 2. Quantify - effort, time spent on toil, number of toil tickets.
-3. Store datapoints, automate measuring, assess efficiency of toil reduction efforts.
+3. Track - Store datapoints, automate measuring, assess efficiency of toil reduction efforts.
 
 Reducing Toil
 * Reject - Costs of doing/not doing, delay to do in batches, use SLO/error budget.
