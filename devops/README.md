@@ -217,3 +217,33 @@ Automation in General
 * Repeatable
 * Self-Service
 
+## Availability, Maintainability, & Reliability
+* Reliability = likelihood of a service functioning correctly in user interaction.
+* Availability + Maintainability affects Reliability of a service.
+* Reliability is a measure of "customer happiness"
+* Cost of improving reliability may exceed benefits
+
+## Availability
+% of time that service is functioning.
+Availability = Uptime/(Uptime + Downtime)
+
+SRE paradigm teaches us "failure is inevitable" - we never say 100% reliable.
+See [here](https://sre.google/sre-book/availability-table/) for a chart. 
+
+### Maintainability
+Proactive Maintainability - build codebase that is easy to change and read.
+Reactive Maintainability - ability to repair after incidents.
+Maintainability - reflected in availability metrics.
+
+### Reliability
+Likelihood of service working correctly when accessed by user.
+
+Only if the users access the service uniformly across all features all the time does Availability determine Reliability.
+
+### Risk
+Cost doesn't increase with reliability.
+
+* Cost of redundant compute resources.
+* Cost of opportunity.
+
+An incremental improvement in reliability may cost 100x more than the previous increment.
