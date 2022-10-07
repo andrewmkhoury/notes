@@ -142,4 +142,36 @@ Forming Error Budget
 * If you haven't hit your error budget then you can push a release
 * Throttle based on budget
 
+## Toil
+### What is toil?
+Manual, repetitive and automatable tasks are toil.
 
+* Not related to project tracking, etc.
+* Manual labor - ssh'ing into systems, repetitive work, etc.
+* Toil is interrupt driven - reacting to PagerDuty alerts is toil.
+* It has little to no lasting impact (enduring value).
+* Toil tasks could be automated.
+
+### Why is toil bad?
+* Toil directly reduces project work.
+* Toil promotes attrition.
+* Lowers morale.
+* Slows career progress when you spend too little time on projects.
+* Creates confusion about SRE role.
+* Sets a precedent.
+* Too much of it can effectively demote an SRE to Ops engineers.
+
+### How to measure toil
+* SREs want ample time for long term engineering work.
+* But also responsible for Ops work.
+* Analyze cost / benefit.  SREs aim for less than 50% time on toil.
+
+Measuring Toil
+1. Identify - processes, prod interruptions, migrations, troubleshooting, capacity planning
+2. Quantify - effort, time spent on toil, number of toil tickets.
+3. Store datapoints, automate measuring, assess efficiency of toil reduction efforts.
+
+Reducing Toil
+* Reject - Costs of doing/not doing, delay to do in batches, use SLO/error budget.
+* Relay - Promote toil reduction as feature, provide self-service.
+* Remove - Eliminate source of toil, automate response.
