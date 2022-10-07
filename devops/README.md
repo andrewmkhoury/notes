@@ -246,3 +246,85 @@ Cost doesn't increase with reliability.
 * Cost of opportunity.
 
 An incremental improvement in reliability may cost 100x more than the previous increment.
+
+
+## SRE Best Practices
+* Immutable Infra. - Comparison, Baking process
+* Auto-scaling - Vertical vs. Horizontal
+* Service Resiliency - Circuit Breaker, rate limiting, retries, time outs, health checks, fallbacks
+
+### Immutable Infra.
+If a server needs an update or fix then new server is deployed.  A new version of the architecture is built and deployed to production during changes.
+
+Benefits
+* Builds reliability, consistency, and confidence.
+
+
+Comparison
+* Mutable - Low initial cost, but deploying on mutable infra gets complex as changes occur on the same system.  Config drifts are likely.
+* Immutable Infra - Deploy what you test, but initial cost is high.
+
+Baking Process
+1. Base Image - Baking process starts with base image - Linux or container base.
+2. Infra as Code Deploy - Config OS, install software, deploy of service, setup monitoring.
+3. Hardening - Disable non-required users, update system components, config firewalls.
+4. Publishing - Created image is copied to registry for deployment.
+
+### Auto-scaling
+Adjust resources according to usage.
+
+Vertical vs. Horizontal
+* Vertical - add CPU, memory, etc. to single node.
+* Horizontal - add more compute by adding more server instances.
+
+Metrics to drive scaling:
+* CPU Usage
+* Network Usage
+* Requests per instance
+* Message queue length
+* Writes & Reads / second
+
+### Service Resiliency
+When there is an outage we can still provide some level of service.
+
+Some comonents to help in resiliency
+* Health Checking
+* Rate Limiting
+* Timeouts
+* Fallbacks
+* Circuit Breaker
+* Retries
+
+Health Check
+* Load balancer has an endpoint that responds if it is healthy or not or if it doesn't respond then it is considered unhealthy as well.
+* Shallow - if service can respond.
+* Deep - Check service and its dependencies. ONLY check vital service dependencies such as the database.
+
+Rate Limiting
+* Put a cap on repeat actions to avoid overload.
+* Prevent user from overloading system.
+* Prevent malicious bot activity.
+* Reduce strain on servers.
+
+Timeouts
+* How long to wait for backend before giving up.
+* Incoming requests will block until they receive timeout.
+* Connection timeout: time to get a connection established.
+* Socket timeout: time to wait for a socket to read data.
+* Response, transaction or "timeout": time to wait for overall response to be received.
+
+Fallbacks
+* fail over to a different option if one service is down.
+
+Circuit Breaker
+* Prevent bigger outages by failing fast.
+* See [here](https://medium.com/bonniernewstech/circuit-breaker-pattern-what-and-why-a17f8babbec0)
+
+Retries
+* Try request again if it fails.
+* When retries make sense - indeterminate failures - Temporary network problem (packet loss), no or slow responses
+* Some errors shouldn't be retried - software responds with specific determinate error.
+
+Retries + Exponential Back-off
+* Time to delay retry in case of failed requests.
+* If retry fails give double time before trying again.
