@@ -224,16 +224,15 @@ Automation in General
 * Cost of improving reliability may exceed benefits
 
 ## Availability
-% of time that service is functioning.
-Availability = Uptime/(Uptime + Downtime)
-
-SRE paradigm teaches us "failure is inevitable" - we never say 100% reliable.
+* % of time that service is functioning.
+* Availability = Uptime/(Uptime + Downtime)
+* SRE paradigm teaches us "failure is inevitable" - we never say 100% available or reliable.
 See [here](https://sre.google/sre-book/availability-table/) for a chart. 
 
 ### Maintainability
-Proactive Maintainability - build codebase that is easy to change and read.
-Reactive Maintainability - ability to repair after incidents.
-Maintainability - reflected in availability metrics.
+* Proactive Maintainability - build codebase that is easy to change and read.
+* Reactive Maintainability - ability to repair after incidents.
+* Maintainability - reflected in availability metrics.
 
 ### Reliability
 Likelihood of service working correctly when accessed by user.
