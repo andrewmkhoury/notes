@@ -328,3 +328,19 @@ Retries
 Retries + Exponential Back-off
 * Time to delay retry in case of failed requests.
 * If retry fails give double time before trying again.
+
+## Troubleshooting
+
+### Benefits of Troubleshooting
+* Not all troubleshooting is for CSO, might be an alert to analyze.
+* Troubleshooting can reduce toil.
+
+### Troubleshooting Process
+1. Report - What is the expected behavior? Actual? Reproducible issue?
+2. Triage - Who do we need? Severity? Prioritize stopping the bleeding.
+3. Examine - Gather data. What parts of system are affected?
+4. Diagnose - Build a hypothesis
+5. Test - Try to validate the hypothesis
+6. Fix - Prove hypothesis of root cause. Start problem mangement process. Write report of incident.
+7. RCA - After fix, prepare problem management w/ RCA (root cause analysis).
+
