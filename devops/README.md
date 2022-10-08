@@ -32,6 +32,8 @@ https://www.redhat.com/en/topics/containers/what-is-container-orchestration
 * DevOps vs SRE - DevOps is a philosophy. SRE can be viewed as an applied implementation of DevOps concepts.
 
 *Tenets of SRE:*
+Book: https://sre.google/sre-book/table-of-contents/
+
 Durable focus on engineering
   * Monitor % of Ops work
   * Product Dev after 50% Ops
@@ -89,6 +91,8 @@ Provisioning
   * Jaeger, Zipkin and New Relic do tracing
   
 ### Introduction to SLx
+* See book: https://sre.google/sre-book/service-level-objectives/
+
 * SL = Service Level, x = different factors that can impact your work as SRE
 * SLI = Service Level Indicator - Aspect of service being measured - e.g. latency
 * SLO = Service Level Objective - Target value for SLI - e.g. 99% of requests < 100ms
@@ -172,6 +176,7 @@ Measuring Toil
 3. Track - Store datapoints, automate measuring, assess efficiency of toil reduction efforts.
 
 Reducing Toil
+* See book: https://sre.google/sre-book/eliminating-toil/
 * Reject - Costs of doing/not doing, delay to do in batches, use SLO/error budget.
 * Relay - Promote toil reduction as feature, provide self-service.
 * Remove - Eliminate source of toil, automate response.
