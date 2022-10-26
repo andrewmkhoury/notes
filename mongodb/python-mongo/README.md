@@ -17,7 +17,7 @@ A JSON parser is a program or module of a program that reads JSON format text fo
 
 **String:** text surrounded by double quotes.    Note: single quotes are usually allowed by parsers (such as MongoDB's parser), but is not actually part of the valid JSON format specification.  For example these are all json string values:
 
-  * **"**a string value"
+  * "a string value"
   * "another-value"
   * "value"
 
