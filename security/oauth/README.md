@@ -30,3 +30,7 @@ Client: The application that wants to access your data.
 Authorization Server: The main engine of OAuth
 
 ## Oauth Tokens
+https://www.oauth.com/oauth2-servers/access-tokens/
+String used to make authorized requests to make API requests as a user (Resource Owner).
+They must be kept confidential in transfer and storage.
+Token endpoint is a url where users request tokens for a user.
