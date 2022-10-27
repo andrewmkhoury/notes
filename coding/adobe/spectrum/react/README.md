@@ -1,4 +1,4 @@
-# Adobe Spectrum Library
+# Adobe React Spectrum Library
 https://react-spectrum.adobe.com
 
 ## Architecture
