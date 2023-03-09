@@ -431,10 +431,8 @@ bar
 4. Finally bar() is called.
 
 ### ES6 Job Queue
-ES6 added the Job Queue which is used by Promises API.  It manages a queue that is processed separately, after the currently scoped call stack and before the Message Queue. 
-```
-v
-```
+ES6 added the Job Queue which is used by Promises API.  It manages a queue that is processed separately, after the currently scoped call stack and before the Message Queue. See [here](https://nodejs.org/en/docs/guides/event-loop-timers-and-nexttick/)
+
 ### process.nextTick
 Run code immediately after the call stack code and job queue (Promises), but before the message queue (setTimeout) / the next event loop iteration.
 ```
