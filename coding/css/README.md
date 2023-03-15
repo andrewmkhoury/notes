@@ -167,7 +167,7 @@ div > div.red {
   <li>Not red</li>
 </ul>
 ```
-* Pseudo selectors - `:hover`, `:focus`, `:required`, `:checked` - see [here](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes)
+* Pseudo selectors - `:hover`, `:focus`, `:required`, `:checked`, `:first-child`, `:last-child`, etc - see [here](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes)
 ```
 <style>
   li:hover {
