@@ -167,3 +167,19 @@ div > div.red {
   <li>Not red</li>
 </ul>
 ```
+* Pseudo selectors - `:hover`, `:focus`
+```
+<style>
+  li:hover {
+    color: red;
+  }
+</style>
+<ul>
+  <li>Red when hovered by mouse</li>
+  <li>Red when hovered by mouse</li>
+  <li>Red when hovered by mouse</li>
+  <li>Red when hovered by mouse</li>
+  <li>Red when hovered by mouse</li>
+  <li>Red when hovered by mouse</li>
+</ul>
+```
