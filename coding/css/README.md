@@ -1,5 +1,28 @@
 # CSS
 
+## Cascade / Order
+* Specificity: Most specific selector applied with the same rule takes precedence
+* Importance: Rules with `!important` added to the end take precedence, e.g. `color: red !important;`
+* Order Last defined takes precedence
+```
+.my-element {
+  background: green;
+  background: purple;
+}
+```
+The backround of elements with class "my-element" are purple, not green.
+
+* Unsupported features fall back to previous cascaded definition:
+```
+.my-element {
+  font-size: 1.5rem;
+  font-size: clamp(1.5rem, 1rem + 3vw, 2rem);
+}
+```
+Browsers that support "clamp" would use the `clamp(1.5rem, 1rem + 3vw, 2rem)`.  Ones that don't would use `1.5rem`.
+
+* 
+
 ## Selectors
 Notes for video: https://www.youtube.com/watch?v=l1mER1bV0N0
 * Universal selector - `*` selects all elements
