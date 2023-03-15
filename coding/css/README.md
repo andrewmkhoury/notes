@@ -233,7 +233,7 @@ CSS will add red text "Before" this.
 </div>
 ```
 * Data attributes - wrap with brackets `[` `]`
-```
+```html
 <style>
   [data-color] {
     background-color: red;
