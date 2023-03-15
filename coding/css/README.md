@@ -24,6 +24,12 @@ Browsers that support "clamp" would use the `clamp(1.5rem, 1rem + 3vw, 2rem)`.  
 ## Dev tools for debugging CSS
 https://web.dev/learn/css/the-cascade/#using-devtools-to-find-out-why-some-css-is-not-applying
 
+## Inheritance
+Not all properties inherit but many do, here is a list: https://web.dev/learn/css/inheritance/#which-properties-are-inheritable
+
+`all` lets you override the behavior: 
+https://developer.mozilla.org/en-US/docs/Web/CSS/all#syntax
+
 ## Selectors
 Notes for video: https://www.youtube.com/watch?v=l1mER1bV0N0
 * Universal selector - `*` selects all elements
