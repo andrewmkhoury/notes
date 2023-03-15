@@ -204,11 +204,17 @@ CSS will add red text "Before" this.
 * Data attributes - wrap with brackets `[` `]`
 ```
 <style>
-  [data-red] {
+  [data-color] {
     background-color: red;
   }
+  [data-color="lightskyblue"] {
+    background-color: lightskyblue;
+  }
 </style>
-<div data-red>
+<div data-color>
 This has a red background
+</div>
+<div data-color="lightskyblue">
+This has a light sky blue background
 </div>
 ```
