@@ -167,19 +167,22 @@ div > div.red {
   <li>Not red</li>
 </ul>
 ```
-* Pseudo selectors - `:hover`, `:focus`, `:required`, `:checked`, `:first-child`, `:last-child`, etc - see [here](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes)
+* Pseudo selectors - `:hover`, `:focus`, `:required`, `:checked`, `:first-child`, `:last-child`, `:nth-child(3)`, `:nth-child(2n)`, `:nth-child(2n - 1)`, `:nth-last-child(2n - 1)`, `:only-child`, etc - see [here](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes)
 ```
 <style>
   li:hover {
     color: red;
   }
+  li:nth-child(2n) {
+    background-color: gray;
+  }
 </style>
 <ul>
   <li>Red when hovered by mouse</li>
+  <li>Gray bg, red text when hovered by mouse</li>
   <li>Red when hovered by mouse</li>
+  <li>Gray bg, red text when hovered by mouse</li>
   <li>Red when hovered by mouse</li>
-  <li>Red when hovered by mouse</li>
-  <li>Red when hovered by mouse</li>
-  <li>Red when hovered by mouse</li>
+  <li>Gray bg, red text when hovered by mouse</li>
 </ul>
 ```
