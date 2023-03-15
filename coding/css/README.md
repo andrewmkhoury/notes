@@ -148,3 +148,22 @@ div > div.red {
   <li>Red</li>
 </ul>
 ```
+* Only next sibling after element - `+`
+```
+<style>
+  li.red + li {
+    color: red;
+  }
+</style>
+<ul>
+  <li>Not red</li>
+  <li>Not red</li>
+  <li class="red">Not red</li>
+  <li>Red</li>
+  <li>Not red</li>
+  <li>Not red</li>
+  <li>Not red</li>
+  <li>Not red</li>
+  <li>Not red</li>
+</ul>
+```
