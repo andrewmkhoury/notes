@@ -21,7 +21,8 @@ The backround of elements with class "my-element" are purple, not green.
 ```
 Browsers that support "clamp" would use the `clamp(1.5rem, 1rem + 3vw, 2rem)`.  Ones that don't would use `1.5rem`.
 
-* 
+## Dev tools for debugging CSS
+https://web.dev/learn/css/the-cascade/#using-devtools-to-find-out-why-some-css-is-not-applying
 
 ## Selectors
 Notes for video: https://www.youtube.com/watch?v=l1mER1bV0N0
