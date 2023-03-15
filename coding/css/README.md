@@ -167,22 +167,25 @@ div > div.red {
   <li>Not red</li>
 </ul>
 ```
-* Pseudo selectors - `:hover`, `:focus`, `:required`, `:checked`, `:first-child`, `:last-child`, `:nth-child(3)`, `:nth-child(2n)`, `:nth-child(2n - 1)`, `:nth-last-child(2n - 1)`, `:only-child`, etc - see [here](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes)
+* Pseudo selectors - `:hover`, `:focus`, `:required`, `:checked`, `:first-child`, `:last-child`, `:nth-child(3)`, `:nth-child(2n)`, `:nth-child(2n - 1)`, `:nth-last-child(2n - 1)`, `:only-child`, `:last-of-type`, `:nth-of-type`, `:not(.selector)` etc. - see [here](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes)
 ```
 <style>
   li:hover {
     color: red;
+  }
+  li:not(.skip) {
+    text-decoration: underline;
   }
   li:nth-child(2n) {
     background-color: gray;
   }
 </style>
 <ul>
-  <li>Red when hovered by mouse</li>
-  <li>Gray bg, red text when hovered by mouse</li>
-  <li>Red when hovered by mouse</li>
-  <li>Gray bg, red text when hovered by mouse</li>
-  <li>Red when hovered by mouse</li>
-  <li>Gray bg, red text when hovered by mouse</li>
+  <li>Underlined, red when hovered by mouse</li>
+  <li>Underlined, gray bg, red text when hovered by mouse</li>
+  <li>Underlined, red when hovered by mouse</li>
+  <li>Underlined, Gray bg, red text when hovered by mouse</li>
+  <li class="skip">Red when hovered by mouse</li>
+  <li>Underlined, gray bg, red text when hovered by mouse</li>
 </ul>
 ```
