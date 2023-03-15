@@ -94,5 +94,29 @@ div > div.red {
   <div class="red">
   This text is red.
   </div>
+  <div>
+    <div class="red">
+    This text is NOT red.
+    </div>
+  </div>
+</div>
+```
+* Any child - ` `
+```
+<style>
+div > div.red {
+  color: red;
+}
+</style>
+<div class="red">
+ This text is NOT red.
+  <div class="red">
+  This text is red.
+  </div>
+  <div>
+    <div class="red">
+    This text is red.
+    </div>
+  </div>
 </div>
 ```
