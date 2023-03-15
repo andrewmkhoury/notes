@@ -28,7 +28,7 @@ This text is green.
 </div>
 ```
 * Class selector - `.classname`
-```
+```html
 <style>
 .red {
   color: red;
@@ -39,7 +39,7 @@ This text is red.
 </div>
 ```
 * id selector - `#idname`
-```
+```html
 <style>
 #mydiv {
    color: gray;
@@ -50,7 +50,7 @@ This text is gray.
 </div>
 ```
 * element + class combined
-```
+```html
 <style>
 div.red {
   color: red;
@@ -64,7 +64,7 @@ This text is NOT red.
 </span>
 ```
 * element + multi-class - chained `.`
-```
+```html
 <style>
 div.red-bg.green-text {
   background-color: red;
@@ -79,7 +79,7 @@ This text is NOT styled.
 </span>
 ```
 * multiple OR'ed selectors - `,`
-```
+```html
 <style>
 div.red, span.red {
   color: red;
@@ -93,7 +93,7 @@ This text is red.
 </span>
 ```
 * Direct child - `>`
-```
+```html
 <style>
 div > div.red {
   color: red;
@@ -112,7 +112,7 @@ div > div.red {
 </div>
 ```
 * Any child - ` `
-```
+```html
 <style>
 div > div.red {
   color: red;
