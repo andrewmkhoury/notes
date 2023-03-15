@@ -131,7 +131,7 @@ div > div.red {
 </div>
 ```
 * Siblings after element - `~`
-```
+```html
 <style>
   li.red ~ li {
     color: red;
@@ -149,7 +149,7 @@ div > div.red {
 </ul>
 ```
 * Only next sibling after element - `+`
-```
+```html
 <style>
   li.red + li {
     color: red;
@@ -168,7 +168,7 @@ div > div.red {
 </ul>
 ```
 * Pseudo classes - `:hover`, `:focus`, `:required`, `:checked`, `:first-child`, `:last-child`, `:nth-child(3)`, `:nth-child(2n)`, `:nth-child(2n - 1)`, `:nth-last-child(2n - 1)`, `:only-child`, `:last-of-type`, `:nth-of-type`, `:not(.selector)` etc. - see [here](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes)
-```
+```html
 <style>
   li:hover {
     color: red;
@@ -189,8 +189,8 @@ div > div.red {
   <li>Underlined, gray bg, red text when hovered by mouse</li>
 </ul>
 ```
-* Pseudo elements
-```
+* Pseudo elements: `:before`, `:after`
+```html
 <style>
   div.red:before {
     content: "Before";
