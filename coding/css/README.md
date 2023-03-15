@@ -167,7 +167,7 @@ div > div.red {
   <li>Not red</li>
 </ul>
 ```
-* Pseudo selectors - `:hover`, `:focus`, `:required`, `:checked`, `:first-child`, `:last-child`, `:nth-child(3)`, `:nth-child(2n)`, `:nth-child(2n - 1)`, `:nth-last-child(2n - 1)`, `:only-child`, `:last-of-type`, `:nth-of-type`, `:not(.selector)` etc. - see [here](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes)
+* Pseudo classes - `:hover`, `:focus`, `:required`, `:checked`, `:first-child`, `:last-child`, `:nth-child(3)`, `:nth-child(2n)`, `:nth-child(2n - 1)`, `:nth-last-child(2n - 1)`, `:only-child`, `:last-of-type`, `:nth-of-type`, `:not(.selector)` etc. - see [here](https://developer.mozilla.org/en-US/docs/Web/CSS/Pseudo-classes)
 ```
 <style>
   li:hover {
@@ -188,4 +188,16 @@ div > div.red {
   <li class="skip">Red when hovered by mouse</li>
   <li>Underlined, gray bg, red text when hovered by mouse</li>
 </ul>
+```
+* Pseudo elements
+```
+<style>
+  div.red:before {
+    content: "Before";
+    background-color: red;
+  }
+</style>
+<div class="red">
+CSS will add red text "Before" this.
+</div>
 ```
