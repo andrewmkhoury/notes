@@ -130,3 +130,21 @@ div > div.red {
   </div>
 </div>
 ```
+* Siblings after element - `~`
+```
+<style>
+  li.red ~ li {
+    color: red;
+  }
+</style>
+<ul>
+  <li>Not red</li>
+  <li>Not red</li>
+  <li class="red">Not red</li>
+  <li>Red</li>
+  <li>Red</li>
+  <li>Red</li>
+  <li>Red</li>
+  <li>Red</li>
+</ul>
+```
