@@ -2,12 +2,22 @@
 
 ## Selectors
 * Universal selector - `*` selects all elements
-```
-* {
-}
+```html
+<html>
+  <head>
+    <style>
+    * {
+      color:red;
+    }
+    </style>
+  </head>
+  <body>
+    all text is red
+  </body>
+</html>
 ```
 * Element selector - `div`, `li`, etc. name of the tag
-```
+```html
 <style>
 div {
   color: green;
