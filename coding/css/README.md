@@ -32,6 +32,9 @@ https://developer.mozilla.org/en-US/docs/Web/CSS/all#syntax
 
 ## Selectors
 Notes for video: https://www.youtube.com/watch?v=l1mER1bV0N0
+
+CSS selector doc: https://web.dev/learn/css/selectors/
+
 * Universal selector - `*` selects all elements
 ```html
 <html>
