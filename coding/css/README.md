@@ -1,6 +1,7 @@
 # CSS
 
 ## Selectors
+Notes for video: https://www.youtube.com/watch?v=l1mER1bV0N0
 * Universal selector - `*` selects all elements
 ```html
 <html>
