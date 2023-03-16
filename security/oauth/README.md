@@ -24,10 +24,10 @@ End User => Identity Provider creates signed token => End User sends token => we
 Scopes are bundles of permissions coded into the application.
 
 ## Actors
-Resource Owner: User who owns the data.
-Resource Server: The API which stores data.
-Client: The application that wants to access your data.
-Authorization Server: The main engine of OAuth
+* Resource Owner: User who owns the data.
+* Resource Server: The API which stores data.
+* Client: The application that wants to access your data.
+* Authorization Server: The main engine of OAuth
 
 ## Oauth Tokens
 https://www.oauth.com/oauth2-servers/access-tokens/
