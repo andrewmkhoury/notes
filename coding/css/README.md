@@ -1,9 +1,11 @@
 # CSS
 
 ## Cascade / Order
-* Specificity: Most specific selector applied with the same rule takes precedence
-* Importance: Rules with `!important` added to the end take precedence, e.g. `color: red !important;`
-* Order Last defined takes precedence
+* [Cascade](https://web.dev/learn/css/the-cascade/): Algorithm for solving conflicts where multiple rules apply to the same HTML elements
+  * Order Last defined takes precedence
+  * Rules that are wrong or not supported are ignored (it has a fallsback instead of failing)
+* [Specificity](https://web.dev/learn/css/specificity/): Most specific selector applied with the same rule takes precedence
+* [Importance](https://web.dev/learn/css/the-cascade/): Rules with `!important` added to the end take precedence, e.g. `color: red !important;`
 ```
 .my-element {
   background: green;
