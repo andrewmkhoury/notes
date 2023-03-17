@@ -54,19 +54,19 @@
   ```
 
 * [Spread operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax)
-The spread operator `...` is a feature of JavaScript introduced with ES6 that gives you access to the insides of an iterable object. An "iterable object" is anything you can iterate over item by item, such as arrays, objects literals, and strings. These kinds of JavaScript types can be traversed in some sequential fashion1.
+  The spread operator `...` is a feature of JavaScript introduced with ES6 that gives you access to the insides of an iterable object. An "iterable object" is anything you can iterate over item by item, such as arrays, objects literals, and strings. These kinds of JavaScript types can be traversed in some sequential fashion1.
 
-```
-const numbers = [1, 2, 3];
+  ```
+  const numbers = [1, 2, 3];
 
-console.log(sum(...numbers));
-// Expected output: 6
-```
+  console.log(sum(...numbers));
+  // Expected output: 6
+  ```
 
 * [Destructuring assignment](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment)
-```
-[a, b, ...rest] = [10, 20, 30, 40, 50];
+  ```
+  [a, b, ...rest] = [10, 20, 30, 40, 50];
 
-console.log(rest);
-// Expected output: Array [30, 40, 50]
-```
+  console.log(rest);
+  // Expected output: Array [30, 40, 50]
+  ```
