@@ -2,6 +2,7 @@
 
 ## Element.previousElementSibling
 https://developer.mozilla.org/en-US/docs/Web/API/Element/previousElementSibling
+jsfiddle: https://jsfiddle.net/1sne6uy3/2/
 
 ```html
 <div>
