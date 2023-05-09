@@ -21,7 +21,7 @@ End User => Identity Provider creates signed token => End User sends token => we
 * Flows
 
 ## Scopes
-Scopes are bundles of permissions coded into the application.
+Scopes are bundles of permissions coded into the application.  They define level of authorization that your application needs to request of the user.
 
 ## Actors
 * Resource Owner: User who owns the data.
@@ -37,6 +37,22 @@ https://www.oauth.com/oauth2-servers/access-tokens/
 
 ## Learn about Google's OAuth using curl
 https://www.youtube.com/watch?v=hBC_tVJIx5w
+https://www.daimto.com/how-to-get-a-google-access-token-with-curl/
 
 Oauth 3 calls:
-![image](https://user-images.githubusercontent.com/2372994/236962607-1392c556-67e5-4857-b947-56881aad5133.png)
+1. Consent - prompt user to allow access:
+   1. example url for consent screen: `https://accounts.google.com/o/oauth2/v2/auth?client_id=XXXX.apps.googleusercontent.com&redirect_uri=urn:ietf:wg:oauth:2.0:oob&scope=https://www.googleapis.com/auth/userinfo.profile&response_type=code`
+   2. In this case we have a special `redirect_uri` and `response_type=code` so we can manually copy the code to use curl for testing / learning. 
+   3. Example consent screen <img src="https://user-images.githubusercontent.com/2372994/236963176-26f11508-ab0b-42da-a2e2-da483a403765.png" width="300">
+   4. Output of this is an "Authorization Code" which is only valid for a few minutes
+2. Exchange the authorization code for for an OAuth access token using a post:
+   1. We send a POST to the token endpoint including our `client_id` and `client_secret`.  This part must be secure, the `client_secret` must be kept secret!  The `client_id` and `client_secret` are two things we were given when setting up oauth with google. 
+   2. Curl command to get access code using authorization code:
+      ```
+      curl -s \
+      --request POST \
+      --data "code=4/1AY0e-g7BhBt0QU9f5HTgNDGNR1GYtH12q4xvgL_D2Q34A&client_id=XXXX.apps.googleusercontent.com&client_secret=zYAoXDam3mqsdwabh3dQ3NTh&redirect_uri=urn:ietf:wg:oauth:2.0:oob&grant_type=authorization_code" \
+      https://accounts.google.com/o/oauth2/token
+      ```
+    <img src="https://user-images.githubusercontent.com/2372994/236962607-1392c556-67e5-4857-b947-56881aad5133.png" width="300">
+
