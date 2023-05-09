@@ -34,3 +34,9 @@ https://www.oauth.com/oauth2-servers/access-tokens/
 * String used to make authorized requests to make API requests as a user (Resource Owner).
 * They must be kept confidential in transfer and storage.
 * Token endpoint is a url where users request tokens for a user.
+
+## Learn about Google's OAuth using curl
+https://www.youtube.com/watch?v=hBC_tVJIx5w
+
+Oauth 3 calls:
+![image](https://user-images.githubusercontent.com/2372994/236962607-1392c556-67e5-4857-b947-56881aad5133.png)
