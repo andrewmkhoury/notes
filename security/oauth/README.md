@@ -35,12 +35,24 @@ https://www.oauth.com/oauth2-servers/access-tokens/
 * They must be kept confidential in transfer and storage.
 * Token endpoint is a url where users request tokens for a user.
 
+## Implicit Grant vs. Authorization Code Grant
+**Auth Code Grant**
+First retrieve an auth code after user consent.
+1. User Login + Consent - response is an Authorization Code
+2. Exchange code for an Access Token and Refresh token
+3. Use the Access Token in HTTP header to access the API `Authorization: Bearer {access_token}`
+4. When the access token expires then use the refresh token to refresh the access token
+
+**Implicit Grant**
+Skips auth code and goes directly to getting the access token.  No refresh token so user would consent each time.
+1. Request the access token directly, user consents immediately - `response_type=token` -> `https://am.example.com:8443/am/oauth2/authorize?response_type=token&client_id=myClientID&redirect_uri=https://example.com/oauth`
+2. Use token for API calls
+
 ## Learn about Google's OAuth using curl
 https://www.youtube.com/watch?v=hBC_tVJIx5w
 https://www.daimto.com/how-to-get-a-google-access-token-with-curl/
 
 <img src="https://user-images.githubusercontent.com/2372994/236962607-1392c556-67e5-4857-b947-56881aad5133.png" width="300">
-
 
 Oauth 4 calls:
 1. User Login + Consent - response is an Authorization Code
@@ -144,4 +156,5 @@ Example response:
   ]
 }
 ```
+
 
