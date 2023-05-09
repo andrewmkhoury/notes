@@ -39,6 +39,9 @@ https://www.oauth.com/oauth2-servers/access-tokens/
 https://www.youtube.com/watch?v=hBC_tVJIx5w
 https://www.daimto.com/how-to-get-a-google-access-token-with-curl/
 
+<img src="https://user-images.githubusercontent.com/2372994/236962607-1392c556-67e5-4857-b947-56881aad5133.png" width="300">
+
+
 Oauth 3 calls:
 1. Consent - prompt user to allow access:
    1. example url for consent screen: `https://accounts.google.com/o/oauth2/v2/auth?client_id=XXXX.apps.googleusercontent.com&redirect_uri=urn:ietf:wg:oauth:2.0:oob&scope=https://www.googleapis.com/auth/userinfo.profile&response_type=code`
@@ -48,11 +51,20 @@ Oauth 3 calls:
 2. Exchange the authorization code for for an OAuth access token using a post:
    1. We send a POST to the token endpoint including our `client_id` and `client_secret`.  This part must be secure, the `client_secret` must be kept secret!  The `client_id` and `client_secret` are two things we were given when setting up oauth with google. 
    2. Curl command to get access code using authorization code:
-      ```
+      ```bash
       curl -s \
       --request POST \
       --data "code=4/1AY0e-g7BhBt0QU9f5HTgNDGNR1GYtH12q4xvgL_D2Q34A&client_id=XXXX.apps.googleusercontent.com&client_secret=zYAoXDam3mqsdwabh3dQ3NTh&redirect_uri=urn:ietf:wg:oauth:2.0:oob&grant_type=authorization_code" \
       https://accounts.google.com/o/oauth2/token
       ```
-    <img src="https://user-images.githubusercontent.com/2372994/236962607-1392c556-67e5-4857-b947-56881aad5133.png" width="300">
+   3. In response we get an access_token:
+      ```json
+      {
+        "access_token": "ya29.a0AfH6SMDypscIeiyNnPRvoizz3NvvA6SZdk9U4K8h4MyQRRm29kEc2shdrskPZp71Q1roy8RqIm_7spufW84ozUoSTk0QKkQ",
+        "expires_in": 3599,
+        "refresh_token": "1//09Y5LQ0XRxjt-CgYIARAAGAkSNwF-L9IrYzyMnbGtJHgh-FTf6z79cBhQ1hsPUAk71HFgFwqyXoiwpIa-4eA",
+        "scope": "https://www.googleapis.com/auth/userinfo.profile",
+        "token_type": "Bearer"
+      }
+      ```
 
