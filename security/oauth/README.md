@@ -46,7 +46,7 @@ First retrieve an auth code after user consent.
 **Implicit Grant**
 Skips auth code and goes directly to getting the access token.  No refresh token so user would consent each time.
 1. Request the access token directly, user consents immediately - `response_type=token` -> `https://am.example.com:8443/am/oauth2/authorize?response_type=token&client_id=myClientID&redirect_uri=https://example.com/oauth`
-2. Use token for API calls
+2. Use token for API calls via HTTP header `Authorization: Bearer {access_token}`
 
 ## Learn about Google's OAuth using curl
 https://www.youtube.com/watch?v=hBC_tVJIx5w
