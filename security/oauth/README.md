@@ -98,6 +98,11 @@ Oauth 4 calls:
       ```
 
 ### Get user profile info
+#### OpenID Connect
+https://developers.google.com/identity/openid-connect/openid-connect
+
+
+#### Google specific people api
 Request for google profile info:
 ```
 curl -H 'Accept: application/json' -H "Authorization: Bearer ya29.a0AfH6SMDe0-ToZWsfUpgPYw2BxHMIU8yRgW3-RiV0yBTjOZJZzOQVp3os3Kh2weJ50AHS_3oPvullLs_wfonlBMo37KabiO7-VJ6G3XbJQ37_ABpikL-tpMrlou3koA67lAiMY3exFY70zT5v7idlT8FDift1kg" \
