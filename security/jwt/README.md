@@ -47,3 +47,11 @@ HMACSHA256(
   base64UrlEncode(payload),
   secret)
 ```
+
+## Final output
+
+The output is three Base64-URL strings separated by dots that can be easily passed in HTML and HTTP environments, while being more compact when compared to XML-based standards such as SAML.
+
+![image](https://user-images.githubusercontent.com/2372994/236962244-7fd541a1-21ed-4581-9ed1-25014878cacb.png)
+
+Try JWT here: https://jwt.io/#debugger-io
