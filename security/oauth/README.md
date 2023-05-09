@@ -46,7 +46,7 @@ Oauth 3 calls:
 1. Consent - prompt user to allow access:
    1. example url for consent screen: `https://accounts.google.com/o/oauth2/v2/auth?client_id=XXXX.apps.googleusercontent.com&redirect_uri=urn:ietf:wg:oauth:2.0:oob&scope=https://www.googleapis.com/auth/userinfo.profile&response_type=code`
    2. In this case we have a special `redirect_uri` and `response_type=code` so we can manually copy the code to use curl for testing / learning. 
-   3. Example consent screen
+   3. Example consent screen \
       <img src="https://user-images.githubusercontent.com/2372994/236963176-26f11508-ab0b-42da-a2e2-da483a403765.png" width="300">
    4. Output of this is an "Authorization Code" which is only valid for a few minutes
 2. Exchange the authorization code for for an OAuth access token using a post:
