@@ -41,7 +41,7 @@ Examle payload (also gets Base64Url encoded):
 To create the signature part you have to take the encoded header, the encoded payload, a secret, the algorithm specified in the header, and sign that.
 
 For example, if we are using HMAC SHA256 the signature would be created like this:
-```
+```javascript
 HMACSHA256(
   base64UrlEncode(header) + "." +
   base64UrlEncode(payload),
