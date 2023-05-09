@@ -42,14 +42,19 @@ https://www.daimto.com/how-to-get-a-google-access-token-with-curl/
 <img src="https://user-images.githubusercontent.com/2372994/236962607-1392c556-67e5-4857-b947-56881aad5133.png" width="300">
 
 
-Oauth 3 calls:
-1. Consent - prompt user to allow access:
+Oauth 4 calls:
+1. User Login + Consent - response is an Authorization Code
+2. Exchange code for an Access Token and Refresh token
+3. Use the Access Token in HTTP header to access the API `Authorization: Bearer {access_token}`
+4. When the access token expires then use the refresh token to refresh the access token
+
+### 1. Consent - prompt user to allow access:
    1. example url for consent screen: `https://accounts.google.com/o/oauth2/v2/auth?client_id=XXXX.apps.googleusercontent.com&redirect_uri=urn:ietf:wg:oauth:2.0:oob&scope=https://www.googleapis.com/auth/userinfo.profile&response_type=code`
    2. In this case we have a special `redirect_uri` and `response_type=code` so we can manually copy the code to use curl for testing / learning. 
    3. Example consent screen \
       <img src="https://user-images.githubusercontent.com/2372994/236963176-26f11508-ab0b-42da-a2e2-da483a403765.png" width="300">
    4. Output of this is an "Authorization Code" which is only valid for a few minutes
-2. Exchange the authorization code for for an OAuth access token using a post:
+### 2. Exchange the authorization code for for an access token
    1. We send a POST to the token endpoint including our `client_id` and `client_secret`.  This part must be secure, the `client_secret` must be kept secret!  The `client_id` and `client_secret` are two things we were given when setting up oauth with google. 
    2. Curl command to get access code using authorization code (`grant_type` is `authorization_code` because that is what we are using to exchange for an access token and refresh token).
       ```bash
@@ -69,4 +74,69 @@ Oauth 3 calls:
       }
       ```
       Bearer token means that the "Bearer" of the token has access - no further authorization required with a Bearer token.  They are considered secure because they are only valid for a limited time - e.g. 1 hr.
+### 3. Call the API
+   1. Now, we can use the access token to call the API
+   2. Use HTTP header `Authorization: Bearer ya29.a0AfH6SMDypscIeiyNnPRvoizz3NvvA6SZdk9U4K8h4MyQRRm29kEc2shdrskPZp71Q1roy8RqIm_7spufW84ozUoSTk0QKkQ`
+### 4. Use refresh token to refresh access token
+   1. Once the access token expires, we use the refresh token to refresh the access token:
+   2. Curl example:
+      ```
+      curl -s \
+      --request POST \
+      --data 'client_id=XXXXX.apps.googleusercontent.com&client_secret=AoXDam3mqsdwabh3dQ3NTh&refresh_token=1//09PsxSjPF2dMnCgYIARAAGAkSNwF-L9IrnCeO3BOLt0d8MGTpDX-bIAP3zb-Jp9sZtACxtJuIromiYeCH_twCyJoiqRsE8R_zOdg&grant_type=refresh_token' \
+      https://accounts.google.com/o/oauth2/token
+      ```
+   2. Note that `grant_type=refresh_token`
+   3. Example response:
+      ```
+      {
+        "access_token": "ya29.a0AfH6SMA_vRaZekKJnvylcviCdEF1mzkPUd2i5k5qhFpclvi7deVMAL1nE4Ci6S3e3z5L0hnhhgYW6KknQEXu3StsdzykuNG6Zd5J80wORd4",
+        "expires_in": 3599,
+        "scope": "https://www.googleapis.com/auth/userinfo.profile",
+        "token_type": "Bearer"
+      }
+      ```
+
+### Get user profile info
+Request for google profile info:
+```
+curl -H 'Accept: application/json' -H "Authorization: Bearer ya29.a0AfH6SMDe0-ToZWsfUpgPYw2BxHMIU8yRgW3-RiV0yBTjOZJZzOQVp3os3Kh2weJ50AHS_3oPvullLs_wfonlBMo37KabiO7-VJ6G3XbJQ37_ABpikL-tpMrlou3koA67lAiMY3exFY70zT5v7idlT8FDift1kg" \
+https://people.googleapis.com/v1/people/me?personFields=names
+```
+Example response:
+```
+{
+  "resourceName": "people/117200475532",
+  "etag": "%EgUBAj03LhoEAQIFByIMR3BzQkR2c9",
+  "names": [
+    {
+      "metadata": {
+        "primary": true,
+        "source": {
+          "type": "PROFILE",
+          "id": "11720047"
+        }
+      },
+      "displayName": "Linda Lawton",
+      "familyName": "Lawton",
+      "givenName": "Linda",
+      "displayNameLastFirst": "Lawton, Linda",
+      "unstructuredName": "Linda Lawton"
+    },
+    {
+      "metadata": {
+        "source": {
+          "type": "CONTACT",
+          "id": "3faa96eb0"
+        }
+      },
+      "displayName": "Linda Lawton",
+      "familyName": "Lawton",
+      "givenName": "Linda",
+      "displayNameLastFirst": "Lawton, Linda",
+      "unstructuredName": "Linda Lawton"
+    }
+  ]
+}
+```
 
