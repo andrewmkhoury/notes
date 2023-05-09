@@ -51,14 +51,14 @@ Oauth 3 calls:
    4. Output of this is an "Authorization Code" which is only valid for a few minutes
 2. Exchange the authorization code for for an OAuth access token using a post:
    1. We send a POST to the token endpoint including our `client_id` and `client_secret`.  This part must be secure, the `client_secret` must be kept secret!  The `client_id` and `client_secret` are two things we were given when setting up oauth with google. 
-   2. Curl command to get access code using authorization code:
+   2. Curl command to get access code using authorization code (`grant_type` is `authorization_code` because that is what we are using to exchange for an access token and refresh token).
       ```bash
       curl -s \
       --request POST \
       --data "code=4/1AY0e-g7BhBt0QU9f5HTgNDGNR1GYtH12q4xvgL_D2Q34A&client_id=XXXX.apps.googleusercontent.com&client_secret=zYAoXDam3mqsdwabh3dQ3NTh&redirect_uri=urn:ietf:wg:oauth:2.0:oob&grant_type=authorization_code" \
       https://accounts.google.com/o/oauth2/token
       ```
-   3. In response we get an access_token:
+   3. In response we get an `access_token` (only valid for 1hr), refresh token can be used to refresh the access token.
       ```json
       {
         "access_token": "ya29.a0AfH6SMDypscIeiyNnPRvoizz3NvvA6SZdk9U4K8h4MyQRRm29kEc2shdrskPZp71Q1roy8RqIm_7spufW84ozUoSTk0QKkQ",
@@ -68,4 +68,5 @@ Oauth 3 calls:
         "token_type": "Bearer"
       }
       ```
+      Bearer token means that the "Bearer" of the token has access - no further authorization required with a Bearer token.  They are considered secure because they are only valid for a limited time - e.g. 1 hr.
 
