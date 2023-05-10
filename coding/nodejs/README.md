@@ -11,7 +11,7 @@ https://nodejs.org/api/
 
 ## Example program
 Basic web server sample code (uses `http` standard api):
-```
+```javascript
 const http = require('http')
 
 const hostname = '127.0.0.1'
@@ -36,7 +36,7 @@ https://nodejs.dev/learn#nodejs-frameworks-and-tools
 
 ## Installing
 Mac OS:
-```
+```bash
 brew install node
 ```
 Other package managers for Linux and Windows are listed in:
@@ -52,23 +52,23 @@ https://github.com/nvm-sh/nvm
 
 ### Using nvm
 * Install latest version of node
-```
+```bash
 nvm install --lts
 ```
 * Install older version of node
-```
+```bash
 nvm install v12.14.1
 ```
 
 ## Reading Environment Variables
 The process core module of Node.js provides the env property which hosts all the environment variables that were set at the moment the process was started.
 e.g.
-```
+```javascript
 process.env.NODE_ENV // "development"
 ```
 ## REPL - Read Evaluate Print Loop
 REPL Console:
-```
+```javascript
 > console.log('test')
 test
 undefined
@@ -89,7 +89,7 @@ Tab autocompletes the properties and methods available.  For example, if you typ
 
 ## Exiting
 Handling SIGTERM (normal `kill`):
-```
+```javascript
 const express = require('express')
 
 const app = express()
@@ -108,27 +108,29 @@ process.on('SIGTERM', () => {
 ```
 
 You can send signals to other processes or to the process itself using:
-`process.kill(process.pid, 'SIGTERM')`
+```javascript
+process.kill(process.pid, 'SIGTERM')
+```
 
 ## Command line arguments
 Iterate all arguments:
-```
+```javascript
 process.argv.forEach((val, index) => {
   console.log(`${index}: ${val}`)
 })
 ```
 Minimalist library:
-```
+```javascript
 const args = require('minimist')(process.argv.slice(2))
 args['name'] //joe
 ```
 With minimalist, use double dashes `--`:
-```
+```bash
 node app.js --name=joe
 ```
 
 ## Console logging
-```
+```javascript
 console.log('My %s has %d years', 'cat', 2)
 ```
 * `%s` format a variable as a string
@@ -139,10 +141,12 @@ To clear the console:
 `console.clear()`
 
 ## Counting Elements
-`console.count()`
+```javascript
+console.count()
+```
 
 Example:
-```
+```javascript
 const oranges = ['orange', 'orange']
 const apples = ['just one apple']
 oranges.forEach(fruit => {
@@ -153,13 +157,13 @@ apples.forEach(fruit => {
 })
 ```
 ## Print the stack trace
-```
+```javascript
 const function2 = () => console.trace()
 const function1 = () => function2()
 function1()
 ```
 Prints stack:
-```
+```javascript
 Trace
     at function2 (repl:1:33)
     at function1 (repl:1:25)
@@ -176,7 +180,7 @@ Trace
 ## Calculate the time spent
 `console.time()` and `console.timeEnd()`
 
-```
+```javascript
 const doSomething = () => console.log('test')
 const measureDoingSomething = () => {
   console.time('doSomething()')
@@ -188,10 +192,12 @@ measureDoingSomething()
 ```
 
 ## Color the output
-`console.log('\x1b[33m%s\x1b[0m', 'hi!')`
+```javascript
+console.log('\x1b[33m%s\x1b[0m', 'hi!')
+```
 
 You install it with `npm install chalk`, then you can use it:
-```
+```javascript
 const chalk = require('chalk')
 console.log(chalk.yellow('hi!'))
 ```
@@ -199,7 +205,7 @@ console.log(chalk.yellow('hi!'))
 ## Create a progress bar
 Progress package for progress bar: `npm install progress`
 
-```
+```javascript
 const ProgressBar = require('progress')
 
 const bar = new ProgressBar(':bar', { total: 10 })
@@ -213,7 +219,7 @@ const timer = setInterval(() => {
 
 ## Command line input
 `readline` module:
-```
+```javascript
 const readline = require('readline').createInterface({
   input: process.stdin,
   output: process.stdout
@@ -228,10 +234,12 @@ readline.question(`What's your name?`, name => {
 `readline-sync` package if you need to show a password as `*`'s.
 
 More complete solution is `inquirer`:
-`npm install inquirer` 
+```bash
+npm install inquirer
+```
 
 Example code:
-```
+```javascript
 const inquirer = require('inquirer')
 
 var questions = [
@@ -252,10 +260,12 @@ inquirer.prompt(questions).then(answers => {
 Use `require(...)`
 
 Example, importing from library.js:
-`const library = require('./library')`
+```javascript
+const library = require('./library')
+```
 
 Example of exporting:
-```
+```javascript
 const car = {
   brand: 'Ford',
   model: 'Fiesta'
@@ -264,7 +274,7 @@ const car = {
 exports.car = car
 ```
 Importing
-```
+```javascript
 const car = require('./items').car
 ```
 
@@ -272,7 +282,7 @@ const car = require('./items').car
 1. *Local Installation* - local packages are installed in the directory where you run `npm install <package-name>`.
   
       e.g. install package to local directory:
-      ```
+      ```bash
       npm install lodash
       ```
       1. npm adds `lodash` to `node_modules`.
@@ -281,7 +291,7 @@ const car = require('./items').car
 2. *Global installation* - global packages are all put in a single place in your system (exactly where depends on your setup), regardless of where you run `npm install -g <package-name>`
 
       e.g install to global location:
-      ```
+      ```bash
       npm install -g lodash
       ```
       
@@ -292,7 +302,9 @@ const car = require('./items').car
       If you have multiple node versions: `/Users/joe/.nvm/versions/node/v8.9.0/lib/node_modules`
 
 3. To uninstall packages, just run with `uninstall` (add `-g` to uninstall globally) instead:
-`npm uninstall lodash`
+```bash
+npm uninstall lodash
+```
 
 
 4. *Local or Global?* It is best practice to always install and use local packages whenever possible.  A package should be installed globally when it provides an executable command that you run from the shell (CLI), and it's reused across projects.
@@ -306,7 +318,7 @@ const car = require('./items').car
 `const _ = require('lodash')`
 
 ## package.json files
-```
+```json
 {
   "name": "test-project",
   "version": "1.0.0",
@@ -406,7 +418,7 @@ When you install an npm package using `npm install <package-name>`, you are addi
 # Call Stack
 Function calls get added to the call stack (similar to other languages, this is a FIFO queue for code queued to run), setTimeout (and setInterval) get added to the ES [Message Queue](https://developer.mozilla.org/en-US/docs/Web/JavaScript/EventLoop#queue).  This affects the order that calls are made.
 
-```
+```javascript
 const bar = () => console.log('bar')
 
 const baz = () => console.log('baz')
@@ -435,7 +447,7 @@ ES6 added the Job Queue which is used by Promises API.  It manages a queue that 
 
 ### process.nextTick
 Run code immediately after the call stack code and job queue (Promises), but before the message queue (setTimeout) / the next event loop iteration.
-```
+```javascript
 process.nextTick(() => {
   //do something
 })
