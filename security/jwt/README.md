@@ -10,7 +10,7 @@ https://jwt.io/introduction
 
 Format: `xxxxx.yyyyy.zzzzz`
 
-Real example from OAuth (`Authorization: Bearer` header contains the JWT token, in OAuth2 this token is known as the `access_token`:
+Real JWT token example in HTTP request (OAuth2.0) (`Authorization: Bearer` header contains the JWT token, in OAuth2 this token is known as the `access_token`:
 ```HTTP
 GET /calendar/v1/events
 Host: api.example.com
