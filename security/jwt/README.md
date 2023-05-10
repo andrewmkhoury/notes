@@ -8,8 +8,34 @@ https://jwt.io/introduction
 * Payload
 * Signature
 
-e.g.
-`xxxxx.yyyyy.zzzzz`
+Format: `xxxxx.yyyyy.zzzzz`
+
+Real example from OAuth (`Authorization: Bearer` header contains the JWT token, in OAuth2 this token is known as the `access_token`:
+```
+GET /calendar/v1/events
+Host: api.example.com
+    
+Authorization: Bearer eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJodHRwczovL2V4YW1wbGUuYXV0aDAuY29tLyIsImF1ZCI6Imh0dHBzOi8vYXBpLmV4YW1wbGUuY29tL2NhbGFuZGFyL3YxLyIsInN1YiI6InVzcl8xMjMiLCJpYXQiOjE0NTg3ODU3OTYsImV4cCI6MTQ1ODg3MjE5Nn0.CA7eaHjIHz5NxeIJoFK9krqaeZrPLwmMmgI_XiQiIkQ
+```
+
+Decoding the JWT and checking the signature via command line:
+`eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJodHRwczovL2V4YW1wbGUuYXV0aDAuY29tLyIsImF1ZCI6Imh0dHBzOi8vYXBpLmV4YW1wbGUuY29tL2NhbGFuZGFyL3YxLyIsInN1YiI6InVzcl8xMjMiLCJpYXQiOjE0NTg3ODU3OTYsImV4cCI6MTQ1ODg3MjE5Nn0.CA7eaHjIHz5NxeIJoFK9krqaeZrPLwmMmgI_XiQiIkQ`
+
+```bash
+base64url::decode () { awk '{ if (length($0) % 4 == 3) print $0"="; else if (length($0) % 4 == 2) print $0"=="; else print $0; }' | tr -- '-_' '+/' | base64 -d; }
+
+echo -n 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9' \
+| base64url::decode
+{"alg":"HS256","typ":"JWT"}
+
+echo -n 'eyJpc3MiOiJodHRwczovL2V4YW1wbGUuYXV0aDAuY29tLyIsImF1ZCI6Imh0dHBzOi8vYXBpLmV4YW1wbGUuY29tL2NhbGFuZGFyL3YxLyIsInN1YiI6InVzcl8xMjMiLCJpYXQiOjE0NTg3ODU3OTYsImV4cCI6MTQ1ODg3MjE5Nn0' \
+| base64url::decode
+{"iss":"https://example.auth0.com/","aud":"https://api.example.com/calandar/v1/","sub":"usr_123","iat":1458785796,"exp":1458872196}
+
+CLIENT_SECRET=...
+echo -n 'eyJhbGciOiJIUzI1NiIsInR5cCI6IkpXVCJ9.eyJpc3MiOiJodHRwczovL2V4YW1wbGUuYXV0aDAuY29tLyIsImF1ZCI6Imh0dHBzOi8vYXBpLmV4YW1wbGUuY29tL2NhbGFuZGFyL3YxLyIsInN1YiI6InVzcl8xMjMiLCJpYXQiOjE0NTg3ODU3OTYsImV4cCI6MTQ1ODg3MjE5Nn0' \
+| openssl dgst -sha256 -binary -hmac $CLIENT_SECRET | basenc --base64url
+```
 
 ### Header
 Example header, this gets Base64Url encoded making the first part `xxxxx`
