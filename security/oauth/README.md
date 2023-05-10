@@ -37,6 +37,7 @@ https://www.oauth.com/oauth2-servers/access-tokens/
 
 ## Implicit Grant vs. Authorization Code Grant
 **Auth Code Grant**
+
 First retrieve an auth code after user consent.
 1. User Login + Consent - response is an Authorization Code
 2. Exchange code for an Access Token and Refresh token
@@ -44,6 +45,7 @@ First retrieve an auth code after user consent.
 4. When the access token expires then use the refresh token to refresh the access token
 
 **Implicit Grant**
+
 Skips auth code and goes directly to getting the access token.  No refresh token so user would consent each time.
 1. Request the access token directly, user consents immediately - `response_type=token` -> `https://am.example.com:8443/am/oauth2/authorize?response_type=token&client_id=myClientID&redirect_uri=https://example.com/oauth`
 2. Use token for API calls via HTTP header `Authorization: Bearer {access_token}`
