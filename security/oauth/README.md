@@ -1,6 +1,6 @@
 # OAuth
 1. open standard for authorization
-2. authorizes clients with access tokens rather than credentials (Bearer token is the same as "access token")
+2. authorizes clients with access tokens rather than credentials (Bearer token is the same as "access token" and the access token is a JWT token [../jwt](../jwt))
 3. OAuth 2.0 is widely used (1.0 and 2.0 or different and not backwards compatible)
 4. user sends an API key ID and secret (instead of user id and password)
 
@@ -93,7 +93,7 @@ Oauth 4 calls:
       Bearer token means that the "Bearer" of the token has access - no further authorization required with a Bearer token.  They are considered secure because they are only valid for a limited time - e.g. 1 hr.
 ### 3. Call the API
    1. Now, we can use the access token to call the API
-   2. Use HTTP header `Authorization: Bearer ya29.a0AfH6SMDypscIeiyNnPRvoizz3NvvA6SZdk9U4K8h4MyQRRm29kEc2shdrskPZp71Q1roy8RqIm_7spufW84ozUoSTk0QKkQ`
+   2. Use HTTP header `Authorization: Bearer ya29.a0AfH6SMDypscIeiyNnPRvoizz3NvvA6SZdk9U4K8h4MyQRRm29kEc2shdrskPZp71Q1roy8RqIm_7spufW84ozUoSTk0QKkQ` - the access token is a JWT token (see [../jwt](../jwt))
 ### 4. Use refresh token to refresh access token
    1. Once the access token expires, we use the refresh token to refresh the access token:
    2. Curl example:
