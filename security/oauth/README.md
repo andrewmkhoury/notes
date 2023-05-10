@@ -1,6 +1,6 @@
 # OAuth
 1. open standard for authorization
-2. authorizes clients with access tokens rather than credentials
+2. authorizes clients with access tokens rather than credentials (Bearer token is the same as "access token")
 3. OAuth 2.0 is widely used (1.0 and 2.0 or different and not backwards compatible)
 4. user sends an API key ID and secret (instead of user id and password)
 
@@ -47,6 +47,9 @@ First retrieve an auth code after user consent.
 Skips auth code and goes directly to getting the access token.  No refresh token so user would consent each time.
 1. Request the access token directly, user consents immediately - `response_type=token` -> `https://am.example.com:8443/am/oauth2/authorize?response_type=token&client_id=myClientID&redirect_uri=https://example.com/oauth`
 2. Use token for API calls via HTTP header `Authorization: Bearer {access_token}`
+
+## OAuth Guide
+https://stackoverflow.blog/2022/12/22/the-complete-guide-to-protecting-your-apis-with-oauth2/
 
 ## Learn about Google's OAuth using curl
 https://www.youtube.com/watch?v=hBC_tVJIx5w
@@ -156,5 +159,3 @@ Example response:
   ]
 }
 ```
-
-
