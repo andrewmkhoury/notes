@@ -1,7 +1,7 @@
 # ECMA6
 * [Arrows](https://github.com/lukehoban/es6features#arrows) - `=>` defines function sharing lexical this as function body (unlike subfunctions).
 * [Classes](https://github.com/lukehoban/es6features#classes) - `class`, `extends`, `constructor`,`get`,`set`, `static` are syntactic sugar over prototypes patterns (i.e. proper-interoperable class definitions).
-  ```
+  ```javascript
   class SkinnedMesh extends THREE.Mesh {
     constructor(geometry, materials) {
       super(geometry, materials);
@@ -30,7 +30,7 @@
   * set prototype at construction (__proto__ is deprecated but supported)
   * `foo: foo` shorthand
   * dynamically defined property names
-    ```
+    ```javascript
     var obj = {
         // __proto__
         __proto__: theProtoObj,
@@ -46,7 +46,7 @@
     };
     ```
 * [Template Strings](https://github.com/lukehoban/es6features#template-strings) - syntactic sugar for concatenating strings
-  ```
+  ```javascript
   // String interpolation and multiline strings
   var name = "Bob", time = "today";
   `Hello ${name}, 
@@ -56,7 +56,7 @@
 * [Spread operator](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Spread_syntax)
   The spread operator `...` is a feature of JavaScript introduced with ES6 that gives you access to the insides of an iterable object. An "iterable object" is anything you can iterate over item by item, such as arrays, objects literals, and strings. These kinds of JavaScript types can be traversed in some sequential fashion1.
 
-  ```
+  ```javascript
   const numbers = [1, 2, 3];
 
   console.log(sum(...numbers));
@@ -64,7 +64,7 @@
   ```
 
 * [Destructuring assignment](https://developer.mozilla.org/en-US/docs/Web/JavaScript/Reference/Operators/Destructuring_assignment)
-  ```
+  ```javascript
   [a, b, ...rest] = [10, 20, 30, 40, 50];
 
   console.log(rest);
