@@ -150,3 +150,22 @@ app.get("/user/validateToken", (req, res) => {
     }
 });
 ```
+### Java
+Maven dependency:
+```
+<dependency>
+    <groupId>com.auth0</groupId>
+    <artifactId>java-jwt</artifactId>
+    <version>4.2.1</version>
+</dependency>
+```
+
+```java
+String jwt = JWT.create()
+        .withHeader(headerMap)
+        .withClaim("string-claim", "string-value")
+        .withClaim("number-claim", 42)
+        .withClaim("bool-claim", true)
+        .withClaim("datetime-claim", Instant.now())
+        .sign(algorithm);
+```
