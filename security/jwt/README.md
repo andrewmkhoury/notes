@@ -152,7 +152,7 @@ app.get("/user/validateToken", (req, res) => {
 ```
 ### Java
 Maven dependency:
-```
+```xml
 <dependency>
     <groupId>com.auth0</groupId>
     <artifactId>java-jwt</artifactId>
