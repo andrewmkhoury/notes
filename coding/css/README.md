@@ -6,7 +6,7 @@
   * Rules that are wrong or not supported are ignored (it falls back instead of failing)
 * [Specificity](https://web.dev/learn/css/specificity/): Most specific selector applied with the same rule takes precedence
 * [Importance](https://web.dev/learn/css/the-cascade/): Rules with `!important` added to the end take precedence, e.g. `color: red !important;`
-```
+```css
 .my-element {
   background: green;
   background: purple;
@@ -15,7 +15,7 @@
 The backround of elements with class "my-element" are purple, not green.
 
 * Unsupported features fall back to previous cascaded definition:
-```
+```css
 .my-element {
   font-size: 1.5rem;
   font-size: clamp(1.5rem, 1rem + 3vw, 2rem);
