@@ -12,7 +12,7 @@ Grab the attention of the audience and keep it throughout.
 * Cater the content to the audience - shoot for getting them to agree, nod, and say "yes"
 
 ## Movement
-* Don't pace unless it goes along to emphasize
+* Don't pace - you can move across stage to emphasize a point but don't constantly pace while talking.
 * Don't hold onto the podium
 * Don't flap your hands around your waist
 * The less you move the more powerful it is when you do.
