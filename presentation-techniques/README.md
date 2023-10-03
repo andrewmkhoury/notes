@@ -5,6 +5,8 @@ Make sure you are clearly audible - If it is an online presentation make sure yo
 
 Grab the attention of the audience and keep it throughout.
 
+Great book to read Techniques of Visual Persuasion - https://www.amazon.com/Techniques-Visual-Persuasion-powerful-motivate/dp/013676679X
+
 ## Intro
 * Never aplogize - for being nervous, etc.
 * Don't tell jokes - it is hard to land jokes
