@@ -3,6 +3,8 @@ Notes from training "How to be an Effective Presenter" by Larry Jordan
 
 Make sure you are clearly audible - If it is an online presentation make sure you use a high end headset / mic and adjust and test audio properly.  Statistics have shown that users drop off of presentations and videos if the audio quality isn't good - moreso than anything else.
 
+Grab the attention of the audience and keep it throughout.
+
 ## Intro
 * Never aplogize - for being nervous, etc.
 * Don't tell jokes - it is hard to land jokes
@@ -33,3 +35,10 @@ Make sure you are clearly audible - If it is an online presentation make sure yo
 Unbalanced
 > If the subject was central, there would be lots of empty space on the left-hand side of the image.
 The rule of thirds suggests that the most interesting location for an image's focal point lies one third in from either edge of the frame and one third down from the top or up from the bottom. 
+
+## Presentation Design
+* Slides should reinforce your points - capture and hold the attention of the audience.
+* Text should emphasize the points
+* Refer to book by Nancy Duarte - Slide:ology https://www.duarte.com/resources/books/slideology/
+* Fonts are important - they have a power and elegance - use fonts to convey emotions - see [here](https://design.tutsplus.com/articles/the-psychology-of-fonts--cms-34943)
+
