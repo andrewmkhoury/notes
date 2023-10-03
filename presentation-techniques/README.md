@@ -48,3 +48,4 @@ The rule of thirds suggests that the most interesting location for an image's fo
 * Keep the charts very simple
 * Don't use 3d chart just to make it look cool, it can distort the data
 * Be careful not to overstate by distorting the chart
+* Book on graphs and charts: https://www.amazon.com/Visual-Display-Quantitative-Information/dp/1930824130
