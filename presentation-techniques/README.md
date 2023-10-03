@@ -41,4 +41,5 @@ The rule of thirds suggests that the most interesting location for an image's fo
 * Text should emphasize the points
 * Refer to book by Nancy Duarte - Slide:ology https://www.duarte.com/resources/books/slideology/
 * Fonts are important - they have a power and elegance - use fonts to convey emotions - see [here](https://design.tutsplus.com/articles/the-psychology-of-fonts--cms-34943)
-* Less is more - when it comes to different fonts, different colors, and the amount of words on slides 
+* Less is more - when it comes to different fonts, different colors, and the amount of words on slides
+* Simplicity + Clarity = Understanding - this applies to all elements of a presentation including charts
