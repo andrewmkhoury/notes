@@ -20,3 +20,7 @@ Make sure you are clearly audible - If it is an online presentation make sure yo
 * Rule of thirds - https://en.wikipedia.org/wiki/Rule_of_thirds
 * Composition - https://en.wikipedia.org/wiki/Composition_(visual_arts)
 * 180 degree rule for photo and video - https://en.wikipedia.org/wiki/180-degree_rule - this esp. applies to live and/or video interviews
+* If you are trying to convey emotion then use close-up frame of the person's face
+* Don't center objects in frame
+* Use movement vs. still - for example a horse running vs. horse standing.
+* Dramatic close-up images vs. far images that look still - for example a close-up frame of a T-Rex dinosaur toy looks more real and terrifying than a far image of the toy.
