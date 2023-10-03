@@ -1,4 +1,5 @@
 # How to Give Presentations
+Notes from training "How to be an Effective Presenter" by Larry Jordan
 
 Make sure you are clearly audible - If it is an online presentation make sure you use a high end headset / mic and adjust and test audio properly.  Statistics have shown that users drop off of presentations and videos if the audio quality isn't good - moreso than anything else.
 
