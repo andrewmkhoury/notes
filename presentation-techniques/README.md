@@ -24,3 +24,12 @@ Make sure you are clearly audible - If it is an online presentation make sure yo
 * Don't center objects in frame
 * Use movement vs. still - for example a horse running vs. horse standing.
 * Dramatic close-up images vs. far images that look still - for example a close-up frame of a T-Rex dinosaur toy looks more real and terrifying than a far image of the toy.
+
+> There are several reasons why you might not want to center the subject in a photograph: 
+> * Negative space - The larger non-subject area, often the background, is called negative space. Placing the subject off-center creates space for the viewer's eye to be guided into the image.
+> * Static images - Placing subjects in the center of the frame can lead to static images that are drab and contain no context or “life”.
+> * Ordinary photos - If you keep your subject centered in the frame, your photo will be seen as particularly ordinary.
+> * Discourages viewers - A center focal point is so heavily weighted that it draws the eye and it gets stuck there.
+Unbalanced
+> If the subject was central, there would be lots of empty space on the left-hand side of the image.
+The rule of thirds suggests that the most interesting location for an image's focal point lies one third in from either edge of the frame and one third down from the top or up from the bottom. 
