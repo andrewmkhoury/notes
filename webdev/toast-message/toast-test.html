@@ -1,0 +1,86 @@
+<!DOCTYPE html>
+<html>
+<head>
+    <style>
+        #toast {
+            visibility: hidden;
+            position: fixed;
+            z-index: 1;
+            left: 50%;
+            top: 20px;
+            transform: translateX(-50%);
+            color: white;
+            text-align: center;
+            font: 14px sans-serif;
+            padding: 14px;
+            border-radius: 6px;
+            display: flex;
+            flex-direction: row;
+            justify-content: space-between;
+            align-items: center;
+        }
+        #toast.show {
+            visibility: visible;
+            -webkit-animation: fadein 0.5s, fadeout 0.5s 2.5s;
+            animation: fadein 0.5s, fadeout 0.5s 2.5s;
+        }
+        .adp-divider {
+            display: block;
+            width: 1px;
+            content: '|';
+            height: 100%;
+        }
+        .success {
+            background-color: #007A4D;
+        }
+        .success .adp-divider {
+            color: #FFFFFF;
+        }
+        .info {
+            background-color: #D3D3D3;
+        }
+        .warn {
+            background-color: #FFA500;
+        }
+        .failure {
+            background-color: #FF0000;
+        }
+        @-webkit-keyframes fadein {
+            from {top: 0; opacity: 0;} 
+            to {top: 20px; opacity: 1;}
+        }
+        @keyframes fadein {
+            from {top: 0; opacity: 0;}
+            to {top: 20px; opacity: 1;}
+        }
+        @-webkit-keyframes fadeout {
+            from {top: 20px; opacity: 1;} 
+            to {top: 0; opacity: 0;}
+        }
+        @keyframes fadeout {
+            from {top: 20px; opacity: 1;}
+            to {top: 0; opacity: 0;}
+        }
+    </style>
+</head>
+<body>
+    <div id="toast"></div>
+    <script>
+        function showToast(message, duration, messageType) {
+            var toast = document.getElementById("toast");
+            toast.className = "show " + messageType;
+            const toastMessage = document.createElement("div");
+            const closeButton = document.createElement("div");
+            const divider = document.createElement("div");
+            divider.className = "adp-divider";
+            toastMessage.innerHTML = message;
+            toast.appendChild(toastMessage);
+            toast.appendChild(divider);
+            toast.appendChild(closeButton);
+            setTimeout(function(){ toast.className = toast.className.replace("show", ""); }, duration);
+        }
+
+        showToast("Hello, I'm a toast message.", 3000, "success");
+    </script>
+</body>
+</html>
