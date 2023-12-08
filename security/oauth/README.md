@@ -44,7 +44,74 @@ First retrieve an auth code after user consent.
 3. Use the Access Token in HTTP header to access the API `Authorization: Bearer {access_token}`
 4. When the access token expires then use the refresh token to refresh the access token
 
-**Implicit Grant**
+## Auth Code Grant PKCE Flow (replaces Implicit Grant Flow)
+Proof Key of Code Exchange (PKCE)
+* is a more secure alternative to the implicit flow
+* it is intended for single-page applications (SPA) and native applications.
+* It's an extension of the OAuth flow's authorization code grant
+
+The PKCE adds three extra parameters to the authorization code grant: 
+* `code_challenge`: A Base64-encoded SHA-256 hash of the code_verifier
+* `code_challenge_method`: the hashing algorithm, for example `S256`
+* `code_verifier`: A cryptographically random string
+
+1. Create a random string `code_verifier` and create a hash of that string `code_challenge` - see pseudocode below [1]
+2. User Login + Consent - then request an authorization code including a `code_challenge` `code_challenge_method` (hashing algorithm) - the response is an Authorization Code
+3. Exchange code for an Access Token and Refresh token - send the 
+4. Use the Access Token in HTTP header to access the API `Authorization: Bearer {access_token}`
+5. When the access token expires then use the refresh token to refresh the access token
+
+[1]
+```javascript
+function base64URLEncode(str) {
+    return str.toString('base64')
+        .replace(/\+/g, '-')
+        .replace(/\//g, '_')
+        .replace(/=/g, '');
+}
+
+function generateRandomString() {
+  const uuid = self.crypto.randomUUID();
+  return base64URLEncode(uuid);
+}
+
+async function sha256Hash(message) {
+  const encoder = new TextEncoder();
+  const data = encoder.encode(message);
+  const hash = await crypto.subtle.digest("SHA-256", data);
+  return hash;
+}
+
+function base64URLEncode(str) {
+    var base64 = btoa(str);
+    var base64url = base64.replace('+', '-').replace('/', '_').replace(/=+$/, '');
+    return base64url;
+}
+
+function base64URLDecode(base64url) {
+    var base64 = base64url.replace('-', '+').replace('_', '/');
+    while (base64.length % 4) {
+        base64 += '=';
+    }
+    var str = atob(base64);
+    return str;
+}
+
+const codeVerifier = generateRandomString();         // (1)
+sessionStorage.put("code_verifier", codeVerifier);  // (2)
+hash = sha256Hash(codeVerifier);                     // (3)
+codeChallenge = base64URLEncode(hash);             // (4)
+
+redirect_to_authorization_endpoint_using_pkce(       # (5)
+	'code_challenge' = codeChallenge, 'code_challenge_method' = "S256")
+```
+
+```javascript
+post_code_to_token_endpoint_using_pkce(             # (6)
+	code = request["code"], code_verifier = sessionStorage.get('code_verifier'))
+```
+
+**Implicit Grant (DEPRECATED in favor of Auth Code + PKCE)**
 
 Skips auth code and goes directly to getting the access token.  No refresh token so user would consent each time.
 1. Request the access token directly, user consents immediately - `response_type=token` -> `https://am.example.com:8443/am/oauth2/authorize?response_type=token&client_id=myClientID&redirect_uri=https://example.com/oauth`
