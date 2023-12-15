@@ -1,5 +1,5 @@
 # AI
-* Bing Chat for all browsers - https://chrome.google.com/webstore/detail/bing-chat-for-all-browser/jofbglonpbndadajbafmmaklbfbkggpo
+* Free GPT-4 chat - https://bing.com/chat
 * RHLF - https://huggingface.co/blog/rlhf
 
 ## Facial recognition libraries
