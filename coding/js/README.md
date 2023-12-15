@@ -6,13 +6,13 @@
 
 Example:
 
-```
+```javascript
 console.log(false == '0')
 console.log(false === '0')
 ```
 
 Output
-```
+```javascript
 true
 false
 ```
@@ -24,18 +24,18 @@ NaN is returned for math operations with non-numeric operands or division by zer
 Testing for NaN:
 
 Pre-ECMA6:
-```
+```javascript
 value !== value
 ```
 ECMA6:
-```
+```javascript
 Number.isNaN()
 ```
 ### Scope
 
 Lexical:
 
-```
+```javascript
 var downloadManager = {
   initialize: function() {
     var _this = this; // Set up `_this` for lexical access
@@ -53,7 +53,7 @@ var downloadManager = {
 
 Bound:
 
-```
+```javascript
 var downloadManager = {
   initialize: function() {
     $('.downloadLink').on('click', function () {
@@ -66,7 +66,7 @@ var downloadManager = {
 ### Closure
 
 Inner function which can acccess variables in the outer (enclosing) function’s scope chain. The closure has access to variables in three scopes; specifically: (1) variable in its own scope, (2) variables in the enclosing function’s scope, and (3) global variables.
-```
+```javascript
 var globalVar = "xyz";
 
 (function outerFunc(outerArg) {
@@ -88,7 +88,7 @@ var globalVar = "xyz";
 
 Output
 
-```
+```javascript
 outerArg = 123
 innerArg = 456
 outerVar = a
@@ -106,7 +106,7 @@ globalVar = xyz
 ### this and closures
 In the inner function call / closure, this.foo is undefined and self.foo === "bar" because it no longer refers to myObject.
 
-```
+```javascript
 var myObject = {
     foo: "bar",
     func: function() {
@@ -132,7 +132,7 @@ It is popular to wrap scripts with a function call which creates a closure aroun
 * Eliminates this coercion - Without use strict, when ```this``` is ```null``` or ```undefined``` then the interpreter would be coerced to the global object.  In strict mode, referring to null or undefined ```this``` throws an error.
 * Makes eval() safer - In non-strict mode, eval variables are created in the containing scope.  In non-strict mode, variables won't get attached to the global scope. For example:
   
-  ```
+  ```javascript
   var x = 17;
   var evalX = eval("'use strict'; var x = 42; x");
   console.assert(x === 17);
@@ -142,23 +142,23 @@ It is popular to wrap scripts with a function call which creates a closure aroun
 
 ### JS Numbers
 The output of the code below is unpredictable
-```
+```javascript
 console.log(0.1 + 0.2);
 console.log(0.1 + 0.2 == 0.3);
 ```
 That is because all numbers in javascript are treated with floating point precision.
 ### Testing if number is an Integer
 You can test if a number is an integer with this function.  ^ is operator for XOR and only works on signed 32-bit integers in two complement format.
-```
+```javascript
 function isInteger(x) { return (x^0) === x; } 
 ```
 The following solution would also work, although not as elegant as the one above:
-```
+```javascript
 function isInteger(x) { return Math.round(x) === x; }
 ```
 ### How to write a method that adds numbers such that you can call it both of these ways sum(2,3) or sum(2)(3)
 Answer 1
-```
+```javascript
 function sum(x) {
   if (arguments.length == 2) {
     return arguments[0] + arguments[1];
@@ -168,7 +168,7 @@ function sum(x) {
 }
 ```
 Answer 2
-```
+```javascript
 function sum(x, y) {
   if (y !== undefined) {
     return x + y;
@@ -179,7 +179,7 @@ function sum(x, y) {
 ```
 ### Variable
 
-```
+```javascript
 var arr1 = "john".split('');
 var arr2 = arr1.reverse();
 var arr3 = "jones".split('');
@@ -188,7 +188,7 @@ console.log("array 1: length=" + arr1.length + " last=" + arr1.slice(-1));
 console.log("array 2: length=" + arr2.length + " last=" + arr2.slice(-1));
 ```
 Outputs
-```
+```javascript
 array 1: length=5 last=j,o,n,e,s
 array 2: length=5 last=j,o,n,e,s
 ```
@@ -196,7 +196,7 @@ arr2 is just a reference to arr1 and array.push(['j','o','n','e','s']) adds the 
 
 ### Addition and Subtraction
 
-```
+```javascript
 console.log(1 +  "2" + "2");
 console.log(1 +  +"2" + "2");
 console.log(1 +  -"1" + "2");
@@ -207,7 +207,7 @@ console.log( "A" - "B" + 2);
 
 Output:
 
-```
+```javascript
 "122"
 "32"
 "02"
@@ -216,9 +216,9 @@ Output:
 NaN
 ```
 
-### Avoiding stack overflow
+### Avoiding stack overflows
 
-```
+```javascript
 var list = readHugeList();
 
 var nextListItem = function() {
@@ -232,7 +232,7 @@ var nextListItem = function() {
 ```
 
 Use setTimeout
-```
+```javascript
 var list = readHugeList();
 
 var nextListItem = function() {
@@ -247,7 +247,7 @@ var nextListItem = function() {
 
 ### 
 
-```
+```javascript
 for (var i = 0; i < 5; i++) {
   setTimeout(function() { console.log(i); }, i * 1000 );
 }
@@ -263,7 +263,7 @@ Output
 ```
 
 This can be fixed by using a closure:
-```
+```javascript
 for (var i = 0; i < 5; i++) {
   (function(x) {
     setTimeout(function() { console.log(x); }, x * 1000 );
@@ -273,7 +273,7 @@ for (var i = 0; i < 5; i++) {
 
 ### || and &&
 
-```
+```javascript
 console.log("0 || 1 = "+(0 || 1));
 console.log("1 || 2 = "+(1 || 2));
 console.log("0 && 1 = "+(0 && 1));
@@ -291,7 +291,7 @@ Output:
 
 ### Associative array keys
 
-```
+```javascript
 var a={},
     b={key:'b'},
     c={key:'c'};
@@ -312,7 +312,7 @@ Object properties are stringified so both b and c are "[object Object]"
 
 ### Function context
 
-```
+```javascript
 var hero = {
     _name: 'John Doe',
     getSecretIdentity: function (){
@@ -335,7 +335,7 @@ John Doe
 
 Solution
 
-```
+```javascript
 var stoleSecretIdentity = hero.getSecretIdentity.bind(hero);
 ```
 
@@ -366,7 +366,7 @@ Built in module system - https://developer.mozilla.org/en-US/docs/Web/JavaScript
 #### ES6 features
 * [Arrows](https://github.com/lukehoban/es6features#arrows) - `=>` defines function sharing lexical this as function body (unlike subfunctions).
 * [Classes](https://github.com/lukehoban/es6features#classes) - `class`, `extends`, `constructor`,`get`,`set`, `static` are syntactic sugar over prototypes patterns (i.e. proper-interoperable class definitions).
-  ```
+  ```javascript
   class SkinnedMesh extends THREE.Mesh {
     constructor(geometry, materials) {
       super(geometry, materials);
@@ -395,7 +395,7 @@ Built in module system - https://developer.mozilla.org/en-US/docs/Web/JavaScript
   * set prototype at construction (__proto__ is deprecated but supported)
   * `foo: foo` shorthand
   * dynamically defined property names
-    ```
+    ```javascript
     var obj = {
         // __proto__
         __proto__: theProtoObj,
@@ -411,7 +411,7 @@ Built in module system - https://developer.mozilla.org/en-US/docs/Web/JavaScript
     };
     ```
 * [Template Strings](https://github.com/lukehoban/es6features#template-strings) - syntactic sugar for concatenating strings
-  ```
+  ```javascript
   // String interpolation and multiline strings
   var name = "Bob", time = "today";
   `Hello ${name}, 
@@ -424,7 +424,7 @@ Built in module system - https://developer.mozilla.org/en-US/docs/Web/JavaScript
           approximate 0.1 very closely. But
           the fact that this number cannot be represented exactly can lead to
           problems. Consider this code:
-```
+```javascript
 var x = .3 - .2;    // thirty cents minus 20 cents
 var y = .2 - .1;    // twenty cents minus 10 cents
 x == y              // => false: the two values are not the same!
@@ -444,7 +444,7 @@ JavaScript: The Definitive Guide
 David Flanagan
 
 ## null vs. undefined
-```
+```javascript
 typeof null === "object"
 typeof undefined === "undefined"
 ```
@@ -452,7 +452,7 @@ Both evaluate to false if used as a in the context of a boolean condition in an 
 https://jsfiddle.net/d9L2vro6/3/
 
 ## Nullish coalescing operator
-```
+```javascript
 const foo = null ?? 'default string';
 console.log(foo);
 // expected output: "default string"
