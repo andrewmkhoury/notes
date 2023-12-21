@@ -1,5 +1,6 @@
 # React Hooks
 Related Doc https://react.dev/reference/react/hooks
+Excellent video tutorial on react hooks: https://www.youtube.com/watch?v=TNhaISOUy6Q
 
 * **State** - declares a [state variable](https://react.dev/learn/state-a-components-memory) that you can update directly.
   * Call `useState` at the top level of your component to declare a state variable.
