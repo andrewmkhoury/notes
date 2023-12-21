@@ -102,12 +102,12 @@ sessionStorage.put("code_verifier", codeVerifier);  // (2)
 hash = sha256Hash(codeVerifier);                     // (3)
 codeChallenge = base64URLEncode(hash);             // (4)
 
-redirect_to_authorization_endpoint_using_pkce(       # (5)
+redirect_to_authorization_endpoint_using_pkce(      // # (5)
 	'code_challenge' = codeChallenge, 'code_challenge_method' = "S256")
 ```
 
 ```javascript
-post_code_to_token_endpoint_using_pkce(             # (6)
+post_code_to_token_endpoint_using_pkce(             // # (6)
 	code = request["code"], code_verifier = sessionStorage.get('code_verifier'))
 ```
 
