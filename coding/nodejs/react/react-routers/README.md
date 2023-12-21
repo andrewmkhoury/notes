@@ -12,7 +12,7 @@ import React from 'react';
 export function MainView() {
   return (
     <Routes>
-      <Route element={<WelcomeView />} path="/welcome" />
+      <Route element={<WelcomeView />} path="/" />
       <Route element={<InventoryView />} path="/books" />
       <Route element={<InventoryView />} path="/books/:bookISBN" />
       <Route element={<Navigate replace to="/" />} path="/*" />
