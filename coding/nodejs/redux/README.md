@@ -1,5 +1,7 @@
 # Redux
-https://redux.js.org/
+* https://redux.js.org/
+
+**WARNING**: Many developers complain that redux is complex and it is best to avoid using it unless you absolutely need it or you need to maintain a project that uses it already.
 
 Redux is a predictable state container for JavaScript apps.
 * Library for managing application state.
