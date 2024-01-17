@@ -265,15 +265,3 @@ Remove Symbolic Link
 %> whereis java
  /usr/bin/java 
 ```
-
-## Bash Tutorial
-## Bash Tutorial 
-Command Ctrl & Alt Shortcuts
-1. `Ctrl-C` (usually) sends the kill signal, which terminates a process abruptly. 
-2. `Ctrl-Z` sends the stop signal, which stops process execution immediately, without terminating. Use “fg” or “bg” after that to restart the process of send it to the background. Ctrl-Y is an interesting variant, which stops process execution only when the process tries to read user input from the console. 
-3. `Ctrl-S` is the scroll lock: when you have too much output scrolling quickly, you can use Ctrl-S to stop process output. You can then use Shift-PageUp/PageDown to scroll up and down and read it. `Ctrl-Q` resumes. Technically speaking, Ctrl-S and Ctrl-Q send the XON/XOFF terminal commands, that may be ignored in some cases. The Bash shell translates `Ctrl-S` to "search", so it depends on where you are working. 
-4. `Ctrl-L` clears the screen and positions the prompt at the top left corner. Use this if your screen has become garbled. 
-5. `Ctrl-A` and Ctrl-E take you to the beginning and the end of the line, respectively. Home and End also work, but not always. 
-6. `Ctrl-D` deletes the character under the cursor. 
-7. `Alt-F` and Alt-B take you to the next or previous word, very useful if you're typing a long sequence of commands or a command with many arguments. 
-8. `[Tab]` is probably the most useful key when using the shell. Tab will do filename completion, but also hostname completion, variable name completion and other useful things. 
