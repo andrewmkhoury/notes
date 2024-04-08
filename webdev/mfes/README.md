@@ -8,7 +8,7 @@ Summary of both SystemJS and single-spa:
 
 **SystemJS**
 
--   [**What**: SystemJS is a hookable, standards-based module loader](https://github.com/systemjs/systemjs)[^1^](https://github.com/systemjs/systemjs).  SystemJS is basically a ES6 module importmap polyfill with a few more features.
+-   [**What**: SystemJS is a hookable, standards-based module loader](https://github.com/systemjs/systemjs)[^1^](https://github.com/systemjs/systemjs).  SystemJS is basically a ES6 module [importmap](https://developer.mozilla.org/en-US/docs/Web/HTML/Element/script/type/importmap) polyfill with a few more features.
 SystemJS.
 -   [**Features**: It supports loading of multiple module formats, including CommonJS, AMD, ES modules, and more](https://hix.dev/tools/javascript/system-js)[^2^](https://hix.dev/tools/javascript/system-js). [It can load modules dynamically, which means that modules can be loaded on demand](https://github.com/systemjs/systemjs)[^2^](https://hix.dev/tools/javascript/system-js). [It also supports plugin-based loading of non-JavaScript assets such as CSS, HTML, and JSON](https://github.com/systemjs/systemjs)[^2^](https://hix.dev/tools/javascript/system-js).
 -   [**Why**: SystemJS provides a workflow where code written for production workflows of native ES modules in browsers can be transpiled to the System.register module format to work in older browsers](https://github.com/systemjs/systemjs)[^1^](https://github.com/systemjs/systemjs).
