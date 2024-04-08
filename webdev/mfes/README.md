@@ -1,7 +1,7 @@
 # Micro-Frontends
 
 ## 
-Here’s a good video on Single-SPA + SystemJS: https://www.youtube.com/watch?v=wU06eTMQ6yI
+Here’s a good video on Single-SPA + SystemJS: https://www.youtube.com/watch?v=wU06eTMQ6yI (shows example with Vue, not React)
 
 
 Summary of both SystemJS and single-spa:
