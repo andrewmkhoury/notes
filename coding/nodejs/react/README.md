@@ -50,3 +50,21 @@ export default function MyApp() {
   );
 }
 ```
+
+## React element types
+What is the difference between React.ReactNode and React.ReactElement types?
+
+- **React.ReactNode**: This type represents anything that can be rendered in React, including strings, numbers, elements, fragments, portals, and even `null` or `undefined`.
+- **React.ReactElement**: This type is a more specific type that represents a React element created by `React.createElement` or JSX. It is an object with `type`, `props`, and `key` properties.
+
+**When to use each type**:
+- Use **React.ReactNode** when you want to represent any renderable content, including `null` or `undefined`.
+- Use **React.ReactElement** when you specifically need to represent a React element object.
+
+I hope this helps clarify the difference! If you have any more questions, feel free to ask.
+
+Source: Conversation with Copilot, 8/8/2024
+(1) When to use JSX.Element vs ReactNode vs ReactElement?. https://stackoverflow.com/questions/58123398/when-to-use-jsx-element-vs-reactnode-vs-reactelement.
+(2) javascript - Confused between the difference between JSX.Element vs .... https://stackoverflow.com/questions/71473609/confused-between-the-difference-between-jsx-element-vs-react-component-and-when.
+(3) Difference between React Component and React Element. https://stackoverflow.com/questions/30971395/difference-between-react-component-and-react-element.
+(4) Typescript React.ReactElement vs JSX.Element - Stack Overflow. https://stackoverflow.com/questions/56308756/typescript-react-reactelement-vs-jsx-element.
