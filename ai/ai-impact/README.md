@@ -102,27 +102,19 @@ Artificial Intelligence (AI) has progressed at a remarkable pace over the past f
 
 AI is poised to reshape our world in fundamental ways over the next two decades. While the next decade (2025–2035) will see a surge in AI-driven automation and the creation of new specialized roles, the longer term (2025–2045) will be characterized by advanced autonomous systems, greater integration of AI into everyday life, and a profound shift in how we work and live. Policymakers, businesses, and individuals will need to adapt to these changes proactively, focusing on education, ethical standards, and inclusive policy frameworks to ensure AI’s benefits are widely shared.
 
-Appendix: Visual Projections
+Appendix: Visual Projections (Mermaid Format)
 
-Below are simplified ASCII-based graphs that illustrate key trends in AI investment and job displacement/creation:
+Below are three mermaid-based timeline charts illustrating (1) global AI investment, (2) AI-related net job creation, and (3) automation of tasks in the U.S.
 
 A.1 Global AI Investment
 
-Global AI Investment (in $ billions)
-   |                       
- 2T |                             (projection)
-   |                                     * 
- 1.6|                                  *  
-   |                               *     
- 1.2|                            *       
-   |                         *          
- 0.8|                      *            
-   |                   *               
- 0.4|             *                    
-   |       *                           
- 0  |  *                                
-   +----------------------------------------------
-     2025    2030      2035      2040      2045
+timeline
+title: Global AI Investment (in $ billions)
+2025 : $200
+2030 : $300-400
+2035 : $500-600
+2040 : $800-900
+2045 : $1+ trillion
 
 	•	2025: $200 billion
 	•	2030: $300–$400 billion
@@ -134,47 +126,29 @@ Global AI Investment (in $ billions)
 
 A.2 AI-Related Job Impact (Global)
 
-Net Job Creation from AI (millions)
-   |
-80 |                                      (projection)
-   |                                   *****
-70 |                                ***
-   |                              **
-60 |                           **
-   |                        **
-50 |                     **
-   |                  **
-40 |               **
-   |           ***
-30 |       ***
-   |    ***
-20 | ***
-   +---------------------------------------------------
-     2025   2030   2035   2040   2045
+timeline
+title: AI-Related Net Job Creation (Global)
+2025 : (Starting point)
+2030 : +78 million net jobs
+2035 : +100 million net jobs (est.)
+2040 : +120 million net jobs (est.)
+2045 : +150 million net jobs (est.)
 
-	•	By 2030: ~78 million more jobs created globally than displaced (World Economic Forum estimate).
-	•	By 2045: Potential expansion as AI enters new industries, though estimates vary widely.
+	•	By 2030: ~78 million more jobs created globally than displaced (World Economic Forum estimate)
+	•	By 2045: Potential expansion as AI enters new industries, though estimates vary widely
 
 A.3 AI Automation of Tasks in the U.S.
 
-% of Automatable Tasks in the U.S.
-   |
-70 |                                  (projection)
-   |                               ***
-60 |                            ***
-   |                         ***
-50 |                     ****
-   |                 ****
-40 |              ***
-   |           ***
-30 |       ***
-   |    ***
-20 |  ***
-   +---------------------------------------------------
-     2025   2030   2035   2040   2045
+timeline
+title: AI Automation of Tasks in the U.S. (%)
+2025 : 10-15% of tasks automatable
+2030 : ~30% automatable
+2035 : ~40-45% automatable
+2040 : ~50% automatable
+2045 : ~60% automatable
 
-	•	By 2030: ~30% of current U.S. hours worked could be automated.
-	•	By 2045: Up to 50–60% of tasks may be automated, though actual figures will depend on policy, technology adoption rates, and societal acceptance.
+	•	By 2030: ~30% of current U.S. hours worked could be automated
+	•	By 2045: Up to 50–60% of tasks may be automated, though actual figures will depend on policy, technology adoption rates, and societal acceptance
 
 References & Sources:
 	•	World Economic Forum, The Future of Jobs Report
