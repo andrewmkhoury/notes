@@ -8,10 +8,17 @@ Artificial Intelligence (AI) has quietly woven itself into the fabric of our dai
 1. [A Glimpse into Our AI Future](#a-glimpse-into-our-ai-future)  
 2. [The Rise of AI Across Industries](#the-rise-of-ai-across-industries)  
    - [Software Engineering](#software-engineering)  
-   - [Hardware Engineering](#hardware-engineering)  
+   - [Hardware and Semiconductor Engineering](#hardware-and-semiconductor-engineering)  
    - [AI Engineering](#ai-engineering)  
-   - [Robotics Engineering](#robotics-engineering)  
+   - [Robotics](#robotics)  
    - [Transportation and Logistics](#transportation-and-logistics)  
+   - [Healthcare and Biotechnology](#healthcare-and-biotechnology)  
+   - [Finance and Insurance](#finance-and-insurance)  
+   - [Retail and E-Commerce](#retail-and-e-commerce)  
+   - [Agriculture and Food Systems](#agriculture-and-food-systems)  
+   - [Energy and Utilities](#energy-and-utilities)  
+   - [Cybersecurity and Privacy](#cybersecurity-and-privacy)  
+   - [Media, Entertainment, and Creative Industries](#media-entertainment-and-creative-industries)  
 3. [Shifting Sands of the Job Market](#shifting-sands-of-the-job-market)  
 4. [Economic Tides and Global Implications](#economic-tides-and-global-implications)  
    - [U.S. Outlook](#us-outlook)  
@@ -47,10 +54,10 @@ For many, the rise of AI in **Software Engineering** is the most immediately vis
 ### Hardware and Semiconductor Engineering
 Within the **Hardware and Semiconductor** sectors, demand for specialized AI chips—ranging from **GPUs** and **TPUs** to **neuromorphic processors**—will surge at *25–30%* annual growth. As AI workloads proliferate in data centers and edge devices, hardware engineers will concentrate on **low-power designs**, **3D chip stacking**, and **custom accelerators**. By the mid-2040s, **brain-inspired (neuromorphic) computing** may achieve **10–100x** energy efficiency boosts, enabling “ambient AI” where everything from smartphones to household appliances runs complex algorithms locally.
 
-### AI Engineering, Data Science, and MLOps
+### AI Engineering
 **AI Engineering**, **Data Science**, and **Machine Learning Operations (MLOps)** are forecast to be among the fastest-growing career tracks. Investment in AI is slated to exceed **\$200 billion** globally by the mid-2020s, fueling the need for experts who can handle the entire pipeline—from raw data ingestion and model training to deployment, scaling, and continuous monitoring. As AI systems become more deeply embedded in critical infrastructure (e.g., healthcare, finance, public utilities), **AI regulatory specialists** and **compliance officers** will also become essential.
 
-### Robotics and Autonomous Systems
+### Robotics
 The **Robotics** field has already seen AI-driven breakthroughs in **manufacturing** and **logistics**, where up to *40%* of tasks could be automated by 2035. Beyond that, autonomous machines will step into increasingly **unstructured environments**, such as construction sites or disaster zones, necessitating advanced **computer vision** and **decision-making**. By 2045, “cobots” and wearable exoskeletons could reduce workplace injuries by *50%*, while cutting operational costs and enhancing productivity in physically demanding industries.
 
 ### Transportation and Logistics
@@ -135,21 +142,14 @@ Our collective task is to guide this transformation in a way that balances innov
 
 ## Visual Exhibits: Where Data Meets Imagination
 
-Below, we present **Mermaid** diagrams to offer a succinct look at the major trends. You can embed these directly in a GitHub repository for a quick, visual summary of AI’s potential trajectory.
-
----
-
 ### Exhibit A: Global AI Investment (2025–2045)
 
 ```mermaid
-timeline
-title Global AI Investment (in $ Billions)
-dateFormat YYYY
-2025 : ~$200B
-2030 : ~$300-400B
-2035 : ~$500-600B
-2040 : ~$800-900B
-2045 : ~$1T+
+xychart-beta
+    title "Global AI Investment (in $ Billions)"
+    x-axis ["2025", "2030", "2035", "2040", "2045"]
+    y-axis "Investment ($ Billions)" 0 --> 1000
+    line [200, 350, 550, 850, 1000]
 ```
 
 **Interpretation**: Investment in AI is expected to rise rapidly as tech firms and governments accelerate research and deployment.
@@ -159,14 +159,11 @@ dateFormat YYYY
 ### Exhibit B: Global Net Job Gains from AI (2025–2045)
 
 ```mermaid
-timeline
-title Net Job Gains from AI (in Millions)
-dateFormat YYYY
-2025 : +20M
-2030 : +78M
-2035 : +100M
-2040 : +120M
-2045 : +150M
+xychart-beta
+    title "Net Job Gains from AI (in Millions)"
+    x-axis ["2025", "2030", "2035", "2040", "2045"]
+    y-axis "Net Job Gains (Millions)" 0 --> 150
+    line [20, 78, 100, 120, 150]
 ```
 
 **Interpretation**: While some jobs will be lost to automation, new AI-related roles may outnumber those displaced—assuming robust retraining efforts and inclusive growth.
@@ -176,14 +173,11 @@ dateFormat YYYY
 ### Exhibit C: AI Automation of Tasks in the U.S. (2025–2045)
 
 ```mermaid
-timeline
-title Percentage of Tasks Automatable in the U.S.
-dateFormat YYYY
-2025 : 15%
-2030 : 30%
-2035 : 40%
-2040 : 50%
-2045 : 60%
+xychart-beta
+    title "Percentage of Tasks Automatable in the U.S."
+    x-axis ["2025", "2030", "2035", "2040", "2045"]
+    y-axis "Automatable Tasks (%)" 0 --> 60
+    line [15, 30, 40, 50, 60]
 ```
 
 **Interpretation**: Initially, AI automates repetitive tasks in industries like customer service and manufacturing. Over time, more complex tasks also become feasible to automate.
@@ -193,18 +187,22 @@ dateFormat YYYY
 ### Exhibit D: Shifts in Workforce Composition (2025–2045)
 
 ```mermaid
-timeline
-title Potential Changes in Workforce Composition
-dateFormat YYYY
-2025 : High-skill=25%, Mid=50%, Low=25%
-2030 : High-skill=30%, Mid=45%, Low=25%
-2035 : High-skill=35%, Mid=40%, Low=25%
-2040 : High-skill=38%, Mid=37%, Low=25%
-2045 : High-skill=40%, Mid=35%, Low=25%
+xychart-beta
+    title "Shifts in Workforce Composition"
+    x-axis ["2025", "2030", "2035", "2040", "2045"]
+    y-axis "Percentage (%)" 0 --> 100
+    line "High-skill" [25, 30, 35, 38, 40]
+    line "Mid-skill" [50, 45, 40, 37, 35]
+    line "Low-skill" [25, 25, 25, 25, 25]
 ```
 
-**Interpretation**: High-skilled roles (such as AI engineering and data science) may grow significantly, while mid-skilled roles face potential automation. Low-skilled roles remain steady in number but risk wage stagnation.
+**Interpretation**: The workforce composition is shifting towards more high-skill roles as AI-driven automation handles mid-skill and low-skill tasks.
 
+---
+
+These visualizations utilize the `xychart-beta` directive in Mermaid.js to present the data clearly. Ensure that your Mermaid.js version supports this feature, as it may be in beta. 
+
+For more details on Mermaid.js's XY chart syntax, refer to the official documentation.  
 ---
 
 ## References and Sources
