@@ -1,9 +1,3 @@
-Below is an updated version of the article with **Mermaid** diagrams that use more widely supported diagram types (such as **timeline**). Many Mermaid renderers do not yet fully support the experimental `bar` syntax for bar charts. These **timeline** diagrams should work in most recent Mermaid environments.
-
-If your rendering environment **does** support Mermaid’s experimental bar charts and you wish to attempt that format, you can refer back to the original bar chart code. Otherwise, these timelines are a reliable fallback.
-
----
-
 # The Transformative Impact of AI Over the Next Two Decades  
 **(2025–2035 and 2025–2045)**  
 
